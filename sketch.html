@@ -1,0 +1,122 @@
+<html>
+<head>
+  <title>Daniel Fenz</title>
+  <link href="css/sketch.css" rel="stylesheet" type="text/css"/>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&amp;subset=latin-ext" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/brands.css"
+  integrity="sha384-n9+6/aSqa9lBidZMRCQHTHKJscPq6NW4pCQBiMmHdUCvPN8ZOg2zJJTkC7WIezWv" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/fontawesome.css"
+  integrity="sha384-vd1e11sR28tEK9YANUtpIOdjGW14pS87bUBuOIoBILVWLFnS+MCX9T6MMf0VdPGq" crossorigin="anonymous">
+</head>
+<body>
+  <div id="navbar" class="flex-container flex-row" style="align-content: center;align-self: center;position: fixed">
+    <div class="flex-item justify"><a onclick="scrollToID('intro')">Home</a></div>
+    <div class="flex-item justify"><a onclick="scrollToID('skills')">Skills</a></div>
+    <div class="flex-item justify"><a onclick="scrollToID('repos')">Repositories</a></div>
+    <div class="flex-item justify"><a onclick="scrollToID('cv')">CV</a></div>
+    <div class="flex-item justify"><a onclick="scrollToID('contact')">Contact</a></div>
+    <!-- <ul>
+      <li><a onclick="scrollToID('intro')">Home</a></li>
+      <li><a onclick="scrollToID('skills')">Skills</a></li>
+      <li><a onclick="scrollToID('repos')">Repositories</a></li>
+      <li><a onclick="scrollToID('')">CV</a></li>
+      <li><a href="#">Blog</a></li>
+      <li><a onclick="scrollToID('contact')">Contact</a></li>
+    </ul> -->
+  </div>
+  <div id="intro" class="block">
+    
+    <div id="name-box"><h1>Daniel Fenz</h1></div>
+    <div id="desc">
+      <p>Hello, my name is Daniel and I'm a developer from Austria.
+        Lorem Ipsum dolor sit amed</p>
+      </div>
+      <div class="unsplash-tag">
+        <a style="color:white;text-decoration:none;padding:4px 6px;font-family:-apple-system, BlinkMacSystemFont, &quot;San Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, Arial, sans-serif;font-size:12px;font-weight:bold;border-radius:3px"
+        href="https://unsplash.com/@asoggetti?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge"
+        target="_blank" rel="noopener noreferrer"
+        title="Download free do whatever you want high-resolution photos from asoggetti">
+        <span style="padding:2px 3px">
+          <svg xmlns="http://www.w3.org/2000/svg"
+          style="height:12px;width:auto;position:relative;vertical-align:middle;top:-2px;fill:white" viewBox="0 0 32 32">
+          <title>unsplash-logo</title>
+          <path d="M10 9V0h12v9H10zm12 5h10v18H0V14h10v9h12v-9z"></path>
+        </svg></span><span style="display:inline-block;padding:2px 3px">Photo by asoggetti</span></a>
+      </div>
+      <div id="socialmedia" class="flex-container flex-row">
+        <!-- <ul>
+          <li><a href="https://github.com/Fancy11111"><img class="icon" alt="Github" src="icons/github64.png"/></a></li>
+          <li><a href="https://www.instagram.com/dafenz/"><img class="icon" alt="Instagram" src="icons/instagram64.png"/></a></li>
+          <li><a href="https://www.linkedin.com/in/daniel-fenz-2b462b15a/"><img class="icon" alt="LinkedIn" src="icons/linkedin64.png"/></a></li>
+          <li><a href="https://open.spotify.com/user/dann_yy?si=osRSn3HUSVKrXW0SQpDjfA"><img class="icon" alt="Spotify" src="icons/spotify64.png" /></a></li>
+          <li><a href="https://open.spotify.com/user/dann_yy?si=osRSn3HUSVKrXW0SQpDjfA"><img class="icon" alt="Soundcloud" src="icons/soundcloud64.png" /></a></li>
+          <li><a href="https://github.com/Fancy11111"><i class="fab fa-github-square"></i></a></li>
+          <li><a href="https://www.instagram.com/dafenz/"><i class="fab fa-instagram"></i></a>
+          </li>
+          <li><a href="https://www.linkedin.com/in/daniel-fenz-2b462b15a/"><i class="fab fa-linkedin"></i></a></li>
+          <li><a href="https://open.spotify.com/user/dann_yy?si=osRSn3HUSVKrXW0SQpDjfA"><i class="fab fa-spotify"></i></a></li>
+          <li><a href="https://open.spotify.com/user/dann_yy?si=osRSn3HUSVKrXW0SQpDjfA"><i class="fab fa-soundcloud"></i></a></li>
+        </ul> -->
+        <a class="flex-item justify icon-med" href="https://github.com/Fancy11111"><i class="fab fa-github-square"></i></a>
+        <a class="flex-item justify icon-med" href="https://www.instagram.com/dafenz/"><i class="fab fa-instagram"></i></a>
+        <a class="flex-item justify icon-med" href="https://www.linkedin.com/in/daniel-fenz-2b462b15a/"><i class="fab fa-linkedin"></i></a>
+        <a class="flex-item justify icon-med" href="https://open.spotify.com/user/dann_yy?si=osRSn3HUSVKrXW0SQpDjfA"><i class="fab fa-spotify"></i></a>
+        <a class="flex-item justify icon-med" href="https://open.spotify.com/user/dann_yy?si=osRSn3HUSVKrXW0SQpDjfA"><i class="fab fa-soundcloud"></i></a>
+      </div>
+    </div>
+    <div id="skills" class="block container">
+      <h1 class="right-align">Skills</h2>
+        <div class="flex-container flex-row">
+          <div class="flex-item left-align flex-container flex-column">
+            <h2 class="flex-item">Web-Development</h2>
+            <ul class="flex-item">
+              <li>Working with HTML5 and CSS3</li>
+              <li>Working with Angular 2</li>
+              <li>Working with Web APIs</li>
+            </ul>
+          </div>
+          <div class="flex-item left-align flex-container flex-column">
+            <h2 class="flex-item">Server Programming</h2>
+            <ul class="flex-item">
+              <li>Programming servers with C++, ASP.NET and Node.js</li>
+              <li>Developing REST-APIs</li>
+            </ul>
+          </div>
+          <div class="flex-item left-align flex-container flex-column">
+            <h2 class="flex-item">Software development</h2>
+            <ul class="flex-item">
+              <li>Developing desktop applications with C# WPF, Java, Electron</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div id="repos"class="block two-split container">
+        <div class="justify">1</div>
+        <div class="justify">2</div>
+      </div>
+      <div id="contact" class="third block container">
+        <h1>Contact</h1>
+      </div>
+      <script>
+        window.onscroll = () => {
+          let scrollPos = window.scrollY || window.scrollTop || document.getElementsByTagName("html")[0].scrollTop;
+          if(scrollPos > 100){
+            document.getElementById('navbar').classList.add('nav-scrolled');
+          } else if (scrollPos <= 100) {
+            document.getElementById('navbar').classList.remove('nav-scrolled');
+          }
+        }
+        
+        function scrollToID(id){
+          let el = document.getElementById(id);
+          console.log('test');
+          
+          if(el){
+            el.scrollIntoView({behavior: 'smooth', block: 'start'});
+          } else {
+            console.warn('scrollToID: id not found')
+          }
+        }
+      </script>
+    </body>
+    </html>
