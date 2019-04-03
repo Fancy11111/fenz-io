@@ -3,9 +3,14 @@
   "name": "Daniel Fenz",
   "icons": [
     {
-      "src": "/images/icons-manifest.png",
+      "src": "/images/manifest-small.png",
       "type": "image/png",
-      "sizes": "64x64"
+      "sizes": "128x128"
+    },
+    {
+      "src": "/images/manifest-big.png",
+      "type": "image/png",
+      "sizes": "512x512"
     }
   ],
   "start_url": "/",
