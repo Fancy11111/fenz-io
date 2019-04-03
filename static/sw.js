@@ -1,4 +1,5 @@
 importScripts('js/cache-polyfill.js');
+var CACHE_NAME = 'fenzio';
 
 self.addEventListener('install', function(e) {
   e.waitUntil(
