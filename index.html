@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<head>
 		<title>Daniel Fenz</title>
 		<meta charset="utf-8">
@@ -13,7 +13,7 @@
 		<meta name="news_keywords" content="Daniel Fenz">
 		<meta name="og:title" property="og:title" content="Daniel Fenz">
 		<!--Mobile specific-->
-		<!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<!--CSS internal-->
 		<link href="css/style.css" rel="stylesheet" type="text/css" />
 		<link rel="stylesheet" type="text/css" media="screen and (min-device-width: 600px)" href="css/vpMin600.css" />
@@ -46,7 +46,7 @@
 		<div id="nav-toggle" onclick="toggleNav()">
 			<i class="fas fa-chevron-circle-down"></i>
 		</div>
-		<div id="nav" class="flex-container flex-row" style="align-content: center;align-self: center;position: fixed">
+		<nav id="nav" class="flex-container flex-row" style="align-content: center;align-self: center;position: fixed">
 			<div class=""><a onclick="scrollToID('intro')">Home</a></div>
 			<div class=""><a onclick="scrollToID('skills')">Skills</a></div>
 			<div class=""><a onclick="scrollToID('repos')">Repositories</a></div>
@@ -60,9 +60,9 @@
 				<li><a href="#">Blog</a></li>
 				<li><a onclick="scrollToID('contact')">Contact</a></li>
 			</ul> -->
-		</div>
+		</nav>
 		
-		<div id="intro" class="block">
+		<header id="intro" class="block">
 			<div id="name-box"><h1>Daniel Fenz</h1></div>
 			<div id="desc">
 				<p>Hello, my name is Daniel and I'm a developer from Austria.
@@ -81,15 +81,15 @@
 				</svg></span><span style="display:inline-block;padding:2px 3px">Photo by asoggetti</span></a>
 			</div>
 			<div id="socialmedia" class="flex-container flex-row">
-				<a class="flex-item justify icon-med" href="https://github.com/Fancy11111"><i class="fab fa-github-square"></i></a>
-				<a class="flex-item justify icon-med" href="https://twitter.com/FancyFenzi"><i class="fab fa-twitter"></i></a>
-				<a class="flex-item justify icon-med" href="https://www.instagram.com/dafenz/"><i class="fab fa-instagram"></i></a>
-				<a class="flex-item justify icon-med" href="https://www.linkedin.com/in/daniel-fenz-2b462b15a/"><i class="fab fa-linkedin"></i></a>
-				<a class="flex-item justify icon-med" href="https://open.spotify.com/user/dann_yy?si=osRSn3HUSVKrXW0SQpDjfA"><i class="fab fa-spotify"></i></a>
-				<a class="flex-item justify icon-med" href="mailto:daniel@fenz.io"><i class="fas fa-envelope"></i></a>
+				<a class="flex-item justify icon-med" aria-label="Visit my Github Profile" href="https://github.com/Fancy11111"><i class="fab fa-github-square"></i></a>
+				<a class="flex-item justify icon-med" aria-label="Visit my Twitter Profile" href="https://twitter.com/FancyFenzi"><i class="fab fa-twitter"></i></a>
+				<a class="flex-item justify icon-med" aria-label="Visit my Instagram Profile" href="https://www.instagram.com/dafenz/"><i class="fab fa-instagram"></i></a>
+				<a class="flex-item justify icon-med" aria-label="Visit my LinkedIn Profile" href="https://www.linkedin.com/in/daniel-fenz-2b462b15a/"><i class="fab fa-linkedin"></i></a>
+				<a class="flex-item justify icon-med" aria-label="Visit my Spotify Profile" href="https://open.spotify.com/user/dann_yy?si=osRSn3HUSVKrXW0SQpDjfA"><i class="fab fa-spotify"></i></a>
+				<a class="flex-item justify icon-med" aria-label="Write me a mail" href="mailto:daniel@fenz.io"><i class="fas fa-envelope"></i></a>
 			</div>
-		</div>
-		<div id="skills" class="block container">
+		</header>
+		<section id="skills" class="block container">
 			<h1 class="right-align">Skills</h2>
 			<div class="three-split">
 				<div class="">
@@ -114,14 +114,14 @@
 					</ul>
 				</div>
 			</div>
-		</div>
-		<div id="repos"class="block two-split container">
+		</section>
+		<section id="repos"class="block two-split container">
 			<div class="justify">1</div>
 			<div class="justify">2</div>
-		</div>
-		<div class="block container">
+		</section>
+		<section class="block container">
 			<h2>Contact</h2>
-		</div>
+		</section>
 
 		<script>
 			window.onscroll = () => {
@@ -152,6 +152,16 @@
 				let toggled = nav.classList.contains('nav-toggled');
 				toggled ? nav.classList.remove('nav-toggled') : nav.classList.add('nav-toggled');
 				toggled ? btn.classList.remove('nav-toggled-btn') : btn.classList.add('nav-toggled-btn');
+			}
+		</script>
+		<!--Service Worker-->
+		<script>
+			if('serviceWorker' in navigator){
+				navigator.serviceWorker.register('/sw.js').then(function(registration) {
+					console.debug('registered service worker: ', registration.scope);
+				}, function(err) {
+					console.log('Error registering: ', err);
+				});
 			}
 		</script>
 	</body>
