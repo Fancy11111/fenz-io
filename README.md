@@ -10,6 +10,7 @@ I plan on doing a blog, which is either going to be done with Angular (or React)
 
 - [x] Basic layout/design
 - [x] Basic responsiveness features
+- [ ] Add a build process
 - [ ] Fill landing page with content
 - [ ] Contact form on landing page
 - [ ] Site notice page
