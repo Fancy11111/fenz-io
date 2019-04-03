@@ -8,7 +8,17 @@ var CACHING = [
   '/css/solid.min.css',
   '/css/brands.min.css',
   '/css/fontawesome.min.css',
-  '/images/temp-background.jpg'
+  '/images/temp-background.jpg',
+  'static/open-sans-v16-latin_latin-ext700.eot',
+  'static/open-sans-v16-latin_latin-ext700.svg',
+  'static/open-sans-v16-latin_latin-ext700.ttf',
+  'static/open-sans-v16-latin_latin-ext700.woff',
+  'static/open-sans-v16-latin_latin-ext700.woff2',
+  'static/open-sans-v16-latin_latin-ext-regular.eot',
+  'static/open-sans-v16-latin_latin-ext-regular.svg',
+  'static/open-sans-v16-latin_latin-ext-regular.ttf',
+  'static/open-sans-v16-latin_latin-ext-regular.woff',
+  'static/open-sans-v16-latin_latin-ext-regular.woff2'
 ];
 
 self.addEventListener('install', function(e) {
