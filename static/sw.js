@@ -24,14 +24,8 @@ var CACHING = [
 
 self.addEventListener('install', function(e) {
   e.waitUntil(
-    caches.open('fenzio').then(function(cache) {
-      return cache.addAll([
-        '/',
-        '/css/style.css',
-        '/css/vpMax600.css',
-        '/css/vpMin600.css',
-        '/images/temp-background.jpg'
-      ]);
+    caches.open(CACHE_NAME).then(function(cache) {
+      return cache.addAll(CACHING);
     })
   );
 });
