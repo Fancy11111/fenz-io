@@ -61,6 +61,10 @@ gulp.task('copyStatic', function() {
 });
 
 gulp.task('build', function() {
-  gulp.series('cleanDist', gulp.parallel('uglify', 'buildCss'));
+  gulp.series(
+    gulp.task('uglify'),
+    gulp.task('buildCss'),
+    gulp.task('copyStatic')
+  );
   return Promise.resolve();
 });
