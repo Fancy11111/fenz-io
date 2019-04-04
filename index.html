@@ -128,10 +128,17 @@
 			<div class="justify">1</div>
 			<div class="justify">2</div>
 		</section>
-		<section class="block container">
-			<h2>Contact</h2>
-			<form action="">
-				<div></div>
+		<section id="contact" class="block container">
+			<h2>Contact me</h2>
+			<form id="contact-form" class="form" action="">
+				<input type="text" name="name" placeholder="Name" id="name" required autocomplete="name">
+				<input type="email" name="email" placeholder="Email" id="email" required autocomplete="email">
+				<select name="subject" id="subject">
+					<option value="hello">Say hello!</option>
+					<option value="contract" disabled>Project Inquiry</option>
+					<option value="job">Job Offer</option>
+				</select>
+				<input type="text" name="message" placeholder="Your message..." id="message" required>
 			</form>
 		</section>
 
