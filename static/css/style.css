@@ -121,13 +121,13 @@ p {
 }
 
 .container:nth-child(odd) {
-  background-color: #1f1f1f;
-  color: white;
+  background-color: white;
+  color: rgb(39, 39, 39);
 }
 
 .container:nth-child(even) {
-  background-color: white;
-  color: rgb(39, 39, 39);
+  background-color: #1f1f1f;
+  color: white;
 }
 
 /* GRID */
