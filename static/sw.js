@@ -9,7 +9,7 @@ var CACHING = [
   '/css/brands.min.css',
   '/css/fontawesome.min.css',
   '/images/temp-background.jpg',
-  //'/images/temp-background-mobile.jpg',
+  '/images/temp-background-mobile.jpg',
   '/icons/favicon.ico',
   //'/js/cache-polyfill.js',
   // '/open-sans-v16-latin_latin-ext700.eot',
