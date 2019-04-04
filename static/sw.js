@@ -10,16 +10,19 @@ var CACHING = [
   '/css/fontawesome.min.css',
   '/images/temp-background.jpg',
   '/images/temp-background-mobile.jpg',
-  'static/open-sans-v16-latin_latin-ext700.eot',
-  'static/open-sans-v16-latin_latin-ext700.svg',
-  'static/open-sans-v16-latin_latin-ext700.ttf',
-  'static/open-sans-v16-latin_latin-ext700.woff',
-  'static/open-sans-v16-latin_latin-ext700.woff2',
-  'static/open-sans-v16-latin_latin-ext-regular.eot',
-  'static/open-sans-v16-latin_latin-ext-regular.svg',
-  'static/open-sans-v16-latin_latin-ext-regular.ttf',
-  'static/open-sans-v16-latin_latin-ext-regular.woff',
-  'static/open-sans-v16-latin_latin-ext-regular.woff2'
+  '/icons/favicon.ico',
+  // '/open-sans-v16-latin_latin-ext700.eot',
+  // '/open-sans-v16-latin_latin-ext700.svg',
+  // '/open-sans-v16-latin_latin-ext700.ttf',
+  // '/open-sans-v16-latin_latin-ext700.woff',
+  '/open-sans-v16-latin_latin-ext700.woff2',
+  // '/open-sans-v16-latin_latin-ext-regular.eot',
+  // '/open-sans-v16-latin_latin-ext-regular.svg',
+  // '/open-sans-v16-latin_latin-ext-regular.ttf',
+  // '/open-sans-v16-latin_latin-ext-regular.woff',
+  '/open-sans-v16-latin_latin-ext-regular.woff2',
+  '/webfonts/fa-brands-400.woff2',
+  '/webfonts/fa-solid-900.woff2'
 ];
 
 self.addEventListener('install', function(e) {
