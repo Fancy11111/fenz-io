@@ -1,5 +1,8 @@
 /* Viewport max 600px */
 
+#intro {
+  background-image: url('../images/temp-background-mobile.jpg');
+}
 
 #nav {
   display: flex;
@@ -51,7 +54,7 @@
 }
 
 #name-box {
-  text-align: center;    
+  text-align: center;
   width: 90vw;
   top: 20%;
   left: 5vw;

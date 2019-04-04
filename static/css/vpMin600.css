@@ -1,5 +1,9 @@
 /* Big Screens */
 
+#intro {
+  background-image: url('../images/temp-background.jpg');
+}
+
 #nav-toggle {
   display: none;
 }
@@ -17,7 +21,7 @@
   height: 6em;
 
   display: flex;
-  min-height: inherit !important;  
+  min-height: inherit !important;
   flex-wrap: wrap;
 }
 
@@ -31,7 +35,7 @@
   overflow: visible;
 }
 
-#nav > div:hover{
+#nav > div:hover {
   background-color: rgba(180, 180, 180, 0.233);
 }
 
@@ -55,7 +59,7 @@
   width: 80vw;
   top: 20vh;
   position: relative;
-  margin-top:20px;
+  margin-top: 20px;
   color: white;
 }
 
