@@ -3,8 +3,8 @@ var CACHE_NAME = 'fenzio';
 var CACHING = [
   '/',
   '/css/style.css',
-  '/css/vpMax600.css',
-  '/css/vpMin600.css',
+  '/css/desktop.css',
+  '/css/mobile.css',
   '/css/solid.min.css',
   '/css/brands.min.css',
   '/css/fontawesome.min.css',
