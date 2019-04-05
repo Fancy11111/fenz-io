@@ -1,8 +1,5 @@
 @import 'style/variables.scss';
 @import 'style/font.scss';
-@import './fontawesome/fontawesome.scss';
-@import './fontawesome/solid.scss';
-@import './fontawesome/brands.scss';
 
 body {
   margin: 0;
@@ -172,3 +169,7 @@ p {
 }
 
 /* UNSPLASH */
+
+@import './fontawesome/fontawesome.scss';
+@import './fontawesome/solid.scss';
+@import './fontawesome/brands.scss';
