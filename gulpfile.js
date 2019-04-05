@@ -107,6 +107,6 @@ gulp.task(
 );
 
 gulp.task(
-  'build',
+  'default',
   gulp.series('cleanDist', gulp.parallel('uglify', 'buildCss', 'copyStatic'))
 );
