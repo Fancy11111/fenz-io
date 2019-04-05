@@ -1,6 +1,5 @@
 const gulp = require('gulp');
 const sass = require('gulp-sass');
-const uglify = require('gulp-uglify');
 const uglify6 = require('gulp-uglify-es').default;
 const del = require('del');
 const imagemin = require('gulp-imagemin');
