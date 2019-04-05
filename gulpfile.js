@@ -43,8 +43,8 @@ gulp.task('devBuildCss', function() {
     .pipe(gulp.dest('static/css'));
 });
 
-gulp.task('watch', function() {
-  gulp.watch(paths.styles.src, ['devBuildCss']);
+gulp.task('watchScss', function() {
+  gulp.watch(paths.styles.src, gulp.series('devBuildCss'));
 });
 
 gulp.task('buildCss', function() {
