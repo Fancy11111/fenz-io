@@ -40,7 +40,7 @@ gulp.task('devBuildCss', function() {
   return gulp
     .src(paths.styles.src)
     .pipe(sass())
-    .pipe(gulp.dest('static/css'));
+    .pipe(gulp.dest('src/static/css'));
 });
 
 gulp.task('watchScss', function() {

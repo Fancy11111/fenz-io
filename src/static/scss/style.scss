@@ -1,9 +1,8 @@
 @import 'style/variables.scss';
 @import 'style/font.scss';
-@import "./fontawesome/fontawesome.scss";
-@import "./fontawesome/solid.scss";
-@import "./fontawesome/brands.scss";
-
+@import './fontawesome/fontawesome.scss';
+@import './fontawesome/solid.scss';
+@import './fontawesome/brands.scss';
 
 body {
   margin: 0;
@@ -35,24 +34,23 @@ p {
   font-family: 'Open Sans', sans-serif;
 }
 
-.form > input[name=email]{
+.form > input[name='email'] {
   height: 1.4em;
   font-size: 1.1em;
 }
 
-.form > input[type=text] {
+.form > input[type='text'] {
   height: 1.3em;
   width: 20vw;
   font-size: 1em;
 }
 
-.form > input[name=name] {
+.form > input[name='name'] {
   height: 1.6em;
   font-size: 1.3em;
 }
 
 .form > select {
-  
 }
 
 /* NAV */
