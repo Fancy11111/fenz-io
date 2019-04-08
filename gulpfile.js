@@ -32,6 +32,10 @@ let paths = {
   html: {
     src: ['src/index.html'],
     dest: 'dist'
+  },
+  manifest: {
+    src: ['src/static/manifest.json'],
+    dest: 'dist'
   }
 };
 
@@ -94,6 +98,9 @@ gulp.task('copyHtml', () =>
 gulp.task('copyIcons', () =>
   gulp.src(paths.icons.src).pipe(gulp.dest(paths.icons.dest))
 );
+gulp.task('copyManifest', () =>
+  gulp.src(paths.manifest.src).pipe(gulp.dest(paths.manifest.dest))
+);
 
 gulp.task(
   'copyStatic',
@@ -102,7 +109,8 @@ gulp.task(
     'copyWebfonts',
     'copyHtml',
     'copyIcons',
-    'compressImages'
+    'compressImages',
+    'copyManifest'
   )
 );
 
