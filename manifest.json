@@ -1,0 +1,21 @@
+{
+  "short_name": "fenz.io",
+  "name": "Daniel Fenz",
+  "icons": [
+    {
+      "src": "/images/manifest-small.png",
+      "type": "image/png",
+      "sizes": "128x128"
+    },
+    {
+      "src": "/images/manifest-big.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#747474",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#747474"
+}
