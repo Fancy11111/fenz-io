@@ -176,8 +176,7 @@
 		<!--Service Worker-->
 		<script type="application/javascript">
 			if('serviceWorker' in navigator){
-				// TODO: /fenz-io/sw.js is for github pages
-				navigator.serviceWorker.register('/fenz-io/sw.js').then(function(registration) {
+				navigator.serviceWorker.register('/sw.js').then(function(registration) {
 					console.debug('registered service worker: ', registration.scope);
 				}, function(err) {
 					console.log('Error registering: ', err);
