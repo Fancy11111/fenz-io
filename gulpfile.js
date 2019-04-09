@@ -36,6 +36,10 @@ let paths = {
   manifest: {
     src: ['src/static/manifest.json'],
     dest: 'dist'
+  },
+  cname: {
+    src: ['src/CNAME'],
+    dest: 'dist'
   }
 };
 
@@ -101,6 +105,9 @@ gulp.task('copyIcons', () =>
 gulp.task('copyManifest', () =>
   gulp.src(paths.manifest.src).pipe(gulp.dest(paths.manifest.dest))
 );
+gulp.task('copyCName', () =>
+  gulp.src(paths.cname.src).pipe(gulp.dest(paths.cname.dest))
+);
 
 gulp.task(
   'copyStatic',
@@ -117,4 +124,12 @@ gulp.task(
 gulp.task(
   'default',
   gulp.series('cleanDist', gulp.parallel('uglify', 'buildCss', 'copyStatic'))
+);
+
+gulp.task(
+  'buildGHPages',
+  gulp.series(
+    'cleanDist',
+    gulp.parallel('uglify', 'buildCss', 'copyStatic', 'copyCName')
+  )
 );
