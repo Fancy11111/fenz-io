@@ -43,142 +43,79 @@
 				]
 			}
 		</script>
-		<div id="nav-toggle" onclick="toggleNav()">
-			<i class="fas fa-chevron-circle-down"></i>
-		</div>
-		<nav id="nav" class="flex-container flex-row" style="align-content: center;align-self: center;position: fixed">
-			<div onclick="scrollToID('intro')"><a>Home</a></div>
-			<div onclick="scrollToID('skills')"><a>Skills</a></div>
-			<div onclick="scrollToID('repos')"><a>Repositories</a></div>
-			<div onclick="scrollToID('cv')"><a>CV</a></div>
-			<div onclick="scrollToID('contact')"><a>Contact</a></div>
-			<!-- <ul>
-				<li><a onclick="scrollToID('intro')">Home</a></li>
-				<li><a onclick="scrollToID('skills')">Skills</a></li>
-				<li><a onclick="scrollToID('repos')">Repositories</a></li>
-				<li><a onclick="scrollToID('')">CV</a></li>
-				<li><a href="#">Blog</a></li>
-				<li><a onclick="scrollToID('contact')">Contact</a></li>
-			</ul> -->
-		</nav>
-		
-		<header id="intro" class="block">
-			<div id="name-box"><h1>Daniel Fenz</h1></div>
-			<div id="desc">
-				<p>Hello, my name is Daniel and I'm a developer from Austria.
-					Lorem Ipsum dolor sit amed</p>
-			</div>
-			<div class="unsplash-tag">
-				<a style="color:white;text-decoration:none;padding:4px 6px;font-family:-apple-system, BlinkMacSystemFont, &quot;San Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, Arial, sans-serif;font-size:12px;font-weight:bold;border-radius:3px"
-				href="https://unsplash.com/@asoggetti?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge"
-				target="_blank" rel="noopener noreferrer"
-				title="Download free do whatever you want high-resolution photos from asoggetti">
-				<span style="padding:2px 3px">
-					<svg xmlns="http://www.w3.org/2000/svg"
-					style="height:12px;width:auto;position:relative;vertical-align:middle;top:-2px;fill:white" viewBox="0 0 32 32">
-					<title>unsplash-logo</title>
-					<path d="M10 9V0h12v9H10zm12 5h10v18H0V14h10v9h12v-9z"></path>
-				</svg></span><span style="display:inline-block;padding:2px 3px">Photo by asoggetti</span></a>
-			</div>
+		<header class="header">
+			<h1>Hi, I'm Daniel Fenz</h1>
+			<h3>I'm a software engineering student based in Vienna, Austria </h3>
 		</header>
-		<section id="socialmedia" class="flex-container flex-row">
-			<a class="flex-item justify icon-med" aria-label="Visit my Github Profile" href="https://github.com/Fancy11111" target="_blank" rel="noopener"><i
-					class="fab fa-github-square"></i></a>
-			<a class="flex-item justify icon-med" aria-label="Visit my Twitter Profile" href="https://twitter.com/FancyFenzi" target="_blank" rel="noopener"><i
-					class="fab fa-twitter"></i></a>
-			<a class="flex-item justify icon-med" aria-label="Visit my Instagram Profile"
-				href="https://www.instagram.com/dafenz/" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
-			<a class="flex-item justify icon-med" aria-label="Visit my LinkedIn Profile"
-				href="https://www.linkedin.com/in/daniel-fenz-2b462b15a/" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
-			<a class="flex-item justify icon-med" aria-label="Visit my Spotify Profile"
-				href="https://open.spotify.com/user/dann_yy?si=osRSn3HUSVKrXW0SQpDjfA" target="_blank" rel="noopener"><i class="fab fa-spotify"></i></a>
-			<a class="flex-item justify icon-med" aria-label="Write me a mail" href="mailto:daniel@fenz.io" target="_blank" rel="noopener"><i
-					class="fas fa-envelope"></i></a>
-		</section>
-		<section id="skills" class="block container">
-			<h1 class="right-align">Skills</h2>
-			<div class="three-split">
-				<div class="">
-					<h2 class="">Web-Development</h2>
-					<ul class="">
-						<li>Working with HTML5 and CSS3</li>
-						<li>Working with Angular 2</li>
-						<li>Working with Web APIs</li>
-					</ul>
+		<main>
+			<div class="overview" id="overview">
+
+				<div class="card" id="edu-card">
+					<p class="card-title">Education</p>
+					<p class="card-content">
+						I am currently studying <a href="" target="_blank">Software Engineering</a> at the <a href="" target="_blank">TU Vienna</a>. 
+						I previously finished the <a href="" target="_blank">IT branch at HTBLuVA Wr. Neustadt</a>
+					</p>
+					<div class="card-links">
+						<a href="#edu-details">See more</a>
+					</div>
 				</div>
-				<div class="">
-					<h2 class="">Server Programming</h2>
-					<ul class="">
-						<li>Programming servers with C++, ASP.NET and Node.js</li>
-						<li>Developing REST-APIs</li>
-					</ul>
+	
+				<div class="card" id="work-card">
+					<p class="card-title">Work</p>
+					<p class="card-content">
+						I am currently employed part time at <a href="" target="_blank">moonsoft HR solutions</a> as backend developer, working with C#, SQL Server and Oracle. 
+						I also did internships at <a href="" target="_blank">Boehringer Ingelheim</a> and <a href="" target="_blank">Prinzhorn AG</a>.
+					</p>
+					<div class="card-links">
+						<a href="#work-details">See more</a>
+					</div>
 				</div>
-				<div class="">
-					<h2 class="">Software development</h2>
-					<ul class="">
-						<li>Developing desktop applications with C# WPF, Java, Electron</li>
-					</ul>
+	
+				<div class="card" id="project-card">
+					<p class="card-title">Projects</p>
+					<p class="card-content">
+						I worked on <a href="" target="_blank">Robin Modd</a>, a employee satisfaction survey application.
+						I also work on <a href="" target="_blank">TGI Pages</a>, a collection of smaller tools helping students at TU Vienna with basic IT exercises.
+					</p>
+					<div class="card-links">
+						<a href="#project-details">See more</a>
+					</div>
 				</div>
 			</div>
-		</section>
-		<section id="repos"class="block two-split container">
-			<div class="justify">1</div>
-			<div class="justify">2</div>
-		</section>
-		<section id="contact" class="block container">
-			<h2>Contact me</h2>
-			<form id="contact-form" class="form" action="">
-				<input type="text" name="name" placeholder="Name" id="name" required autocomplete="name">
-				<input type="email" name="email" placeholder="Email" id="email" required autocomplete="email">
-				<select name="subject" id="subject">
-					<option value="hello">Say hello!</option>
-					<option value="contract" disabled>Project Inquiry</option>
-					<option value="job">Job Offer</option>
-				</select>
-				<input type="text" name="message" placeholder="Your message..." id="message" required>
-			</form>
-		</section>
+			<div class="details">
+				<div class="detail-page" id="edu-details">
+					<h2 class="detail-header">
 
-		<script type="application/javascript">
-			window.onscroll = () => {
-				let scrollPos = window.scrollY || window.scrollTop || document.getElementsByTagName("html")[0].scrollTop;
-				//console.log(scrollPos);
-				if(scrollPos > 35){
-					document.getElementById('nav').classList.add('nav-scrolled');
-				} else if (scrollPos <= 35) {
-					document.getElementById('nav').classList.remove('nav-scrolled');
-				}
-			}
-			
-			function scrollToID(id){
-				let el = document.getElementById(id);
-				console.log('test');
-				
-				if(el){
-					el.scrollIntoView({behavior: 'smooth', block: 'start'});
-				} else {
-					console.warn('scrollToID: id not found')
-				}
-			}
-			
-			function toggleNav(){
-				let nav = document.getElementById('nav');
-				let btn = document.getElementById('nav-toggle');
-				//console.log(nav.classList.contains('nav-toggled'));
-				let toggled = nav.classList.contains('nav-toggled');
-				toggled ? nav.classList.remove('nav-toggled') : nav.classList.add('nav-toggled');
-				toggled ? btn.classList.remove('nav-toggled-btn') : btn.classList.add('nav-toggled-btn');
-			}
-		</script>
-		<!--Service Worker-->
-		<script type="application/javascript">
-			if('serviceWorker' in navigator){
-				navigator.serviceWorker.register('/sw.js').then(function(registration) {
-					console.debug('registered service worker: ', registration.scope);
-				}, function(err) {
-					console.log('Error registering: ', err);
-				});
-			}
-		</script>
+					</h2>
+					<div class="detail-content">
+
+					</div>
+				</div>
+
+				<div class="detail-page" id="work-details">
+					<h2 class="detail-header">
+
+					</h2>
+					<div class="detail-content">
+
+					</div>
+				</div>
+
+				<div class="detail-page" id="project-details">
+					<h2 class="detail-header">
+
+					</h2>
+					<div class="detail-content">
+
+					</div>
+				</div>
+			</div>
+			<div class="contact-section" id="contact-me">
+				<div class="contact-bar"
+				<!-- github, insta, twitter, mail, linkedin -->
+			</div>
+		</main>
+
 	</body>
 </html>
