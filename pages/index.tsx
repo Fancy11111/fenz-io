@@ -1,4 +1,6 @@
 import { Container, Box, Image, Heading, Link } from '@chakra-ui/react';
+import Card from '../components/card';
+import ContactMe from '../components/contact-me';
 import Section from '../components/section';
 import { TimelineItem, Timeline } from '../components/timeline';
 
@@ -37,7 +39,7 @@ const Page = () => {
             I was taught Python, Java, C#, C++, Javascript, SQL Server, Oracle Server, SQL Server and basics of project management.
           </p>
         </TimelineItem>
-        <TimelineItem time="2020-" description="Bsc. Software & Information Engineering @ TU Wien">
+        <TimelineItem time="2020-now" description="Bsc. Software & Information Engineering @ TU Wien">
           <p>
             In September of 2020 I started my Bachelor in <Link 
               href="https://www.tuwien.at/en/studies/studies/bachelor-programmes/computer-science-and-business-informatics#c290809" 
@@ -58,12 +60,44 @@ const Page = () => {
       </Section>
       <Section>
         <Heading as="h3" variant="section-title">
-          Education
+          Work
         </Heading> 
         <Timeline>
-          <TimelineItem time="2019-09 - 2019-12" description="moonsoft HR solutions">Lorem</TimelineItem>
-          <TimelineItem time="2020-01 - 2020-06" description="Austria Military Service">Lorem</TimelineItem>
+          <TimelineItem time="2019-09 - 2019-12" description="moonsoft HR Solutions">
+            Working as a backend developer at <Link href="http://www.moonsoft.at/" hrefPass target="_blank">moonsoft HR Solutions</Link>.
+            Tech Stack: C#, Oracle SQL and SQL Developer, a lot of proprietary build tools and a custom ORM.
+            Tasks included things like 
+            building an employee questioning system, 
+            creating a system to create rules to update collective agreement contracts based on customizable rulesets,
+            improving an existing job system.
+          </TimelineItem>
+          <TimelineItem time="2020-01 - 2020-06" description="Austria Military Service">
+            Doing my mandatory military service at the Austrian Military Service
+          </TimelineItem>
+          <TimelineItem time="2020-07 - 2021-12" description="moonsoft HR Solutions">
+            Working as a backend developer at <Link href="http://www.moonsoft.at/" hrefPass target="_blank">moonsoft HR Solutions</Link>.
+            Tech Stack: C#, Oracle SQL and SQL Developer, a lot of proprietary build tools and a custom ORM.
+            Tasks included things like 
+            building an employee questioning system, 
+            creating a system to create rules to update collective agreement contracts based on customizable rulesets,
+            improving an existing job system.
+          </TimelineItem>
+          <TimelineItem time="2022-01 - future" description="Freelance">
+            Working for Friendly Captcha
+          </TimelineItem>
         </Timeline>
+      </Section>
+      <Section>
+        <Heading as="h3" variant="section-title">
+          Projects
+        </Heading> 
+        <Card title="Me" imageUrl="/me.png" text="Yep, that's me. You probably wondered how I ended up here"/>
+      </Section>
+      <Section>
+        <Heading as="h3" variant="section-title">
+          Contact me
+        </Heading> 
+        <ContactMe></ContactMe>
       </Section>
     </Container>
   )
