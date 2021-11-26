@@ -8,7 +8,10 @@ import {
   ModalCloseButton,
   useDisclosure,
   Button,
-  Box
+  Box,
+  VStack,
+  StackDivider,
+  useColorModeValue
 } from "@chakra-ui/react"
 import { ReactElement } from "react";
 
@@ -28,7 +31,7 @@ export const TimelineItem: React.FunctionComponent<ITimelineItem> = ({time, desc
   const { isOpen, onOpen, onClose } = useDisclosure()
   const title = `${time} | ${description}`;
   return (
-    <>
+    <Box mt={{base:3, md: 5}}>
       <Button onClick={onOpen}>{title}</Button>
 
       <Modal isOpen={isOpen} onClose={onClose}>
@@ -47,7 +50,7 @@ export const TimelineItem: React.FunctionComponent<ITimelineItem> = ({time, desc
           </ModalFooter>
         </ModalContent>
       </Modal>
-    </>
+    </Box>
   );
 }
 
@@ -57,8 +60,10 @@ type TimelineProps = {
 
 export const Timeline = ({children}: TimelineProps) => {
   return (
-    <Box>
+    <VStack
+      divider={<StackDivider borderColor={useColorModeValue('black', 'whiteAlpha900')} orientation="vertical"/>}
+    >
       {children}
-    </Box>
+    </VStack>
   )
 }
