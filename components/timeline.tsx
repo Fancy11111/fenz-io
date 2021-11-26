@@ -26,7 +26,7 @@ interface ITimelineItem {
 
 export const TimelineItem: React.FunctionComponent<ITimelineItem> = ({time, description, children}: TimelineItemProps) => {
   const { isOpen, onOpen, onClose } = useDisclosure()
-  const title = `${time} - ${description}`;
+  const title = `${time} | ${description}`;
   return (
     <>
       <Button onClick={onOpen}>{title}</Button>
@@ -34,7 +34,7 @@ export const TimelineItem: React.FunctionComponent<ITimelineItem> = ({time, desc
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader>{title}</ModalHeader>
+          <ModalHeader>{description}</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
             {children}
