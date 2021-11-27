@@ -41,6 +41,8 @@ const colors = {
   primaryDark: '#00867d',
   secondary: '#b54b56',
   secondaryLight: '#eb7a82',
+  secondaryAccent: '#b54b5625',
+  secondaryAccentDark: '#811a2d40',
   secondaryDark: '#811a2d'
 
 }
