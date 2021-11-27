@@ -3,8 +3,9 @@ import NextLink from 'next/link';
 import { Container, Box, Link, Stack, Heading, Flex, Menu, MenuItem, MenuList, MenuButton, IconButton, useColorModeValue } from '@chakra-ui/react';
 import { HamburgerIcon } from '@chakra-ui/icons';
 import ThemeToggleButton from "./theme-toggle-button";
+import BreadcrumbBar from "./breadcrumb-bar";
 
-const LinkItem = ({href, path, children}) => {
+export const LinkItem = ({href, path, children}) => {
   const active = path === href;
   const inactiveColor = useColorModeValue('gray200', 'whiteAlpha900');
   return (
@@ -35,6 +36,8 @@ const MobileNavLink = ({path,text, children}: MobileNavLink) => {
 
 const Navbar = props => {
   const { path } = props;
+  console.log(path);
+  
   return (
     <Box position="fixed" as="nav" w="100%" bg={useColorModeValue('#f0f0f080', '#35353580')} style={{backdropFilter:'blur(10px)'}} zIndex={10} {...props}>  
       <Container display="flex" p={2} maxW="container.md" wrap="wrap" align="center" justify="space-between">
@@ -71,6 +74,7 @@ const Navbar = props => {
           </Box>
         </Box>
       </Container>
+      <BreadcrumbBar path={path}/>
     </Box>
   );
 }
