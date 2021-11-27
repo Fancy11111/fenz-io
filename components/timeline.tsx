@@ -9,8 +9,9 @@ import {
   useDisclosure,
   Button,
   Box,
-  VStack,
-  StackDivider,
+  Container,
+  Flex,
+  Divider,
   useColorModeValue
 } from "@chakra-ui/react"
 import { ReactElement } from "react";
@@ -31,7 +32,7 @@ export const TimelineItem: React.FunctionComponent<ITimelineItem> = ({time, desc
   const { isOpen, onOpen, onClose } = useDisclosure()
   const title = `${time} | ${description}`;
   return (
-    <Box mt={{base:3, md: 5}}>
+    <Box>
       <Button onClick={onOpen}>{title}</Button>
 
       <Modal isOpen={isOpen} onClose={onClose}>
@@ -54,16 +55,23 @@ export const TimelineItem: React.FunctionComponent<ITimelineItem> = ({time, desc
   );
 }
 
+const VertBar = () => {
+  return (
+    <Box as="div" h={6} mt={4} mb={4} borderLeftWidth={1} borderRightWidth={0} border="solid" w={1} borderColor={useColorModeValue('#0f0f0f90', '#f0f0f0c0')} />
+  )
+}
+
 type TimelineProps = {
   children: Array<ReactElement<ITimelineItem>>
 }
 
 export const Timeline = ({children}: TimelineProps) => {
   return (
-    <VStack
-      divider={<StackDivider borderColor={useColorModeValue('black', 'whiteAlpha900')} orientation="vertical"/>}
-    >
-      {children}
-    </VStack>
+    <Container pt={2} pb={2} borderRadius="md" bg={'secondaryAccent'}>
+      <Flex direction="column" align="center" justify="space-between">
+        {children.slice(0,1)}
+        {children.slice(1).map(c => (<> <VertBar/> {c} </>))}
+      </Flex>
+    </Container>
   )
 }
