@@ -32,17 +32,15 @@ export const TimelineItem: React.FunctionComponent<ITimelineItem> = ({time, desc
   const title = `${time} | ${description}`;
   return (
     <Box>
-      <Button onClick={onOpen} scrollBehavior='inside'>{title}</Button>
+      <Button onClick={onOpen}>{title}</Button>
 
       <Modal isOpen={isOpen} onClose={onClose} isCentered>
-        <ModalOverlay w="150vw" h="150vh"/>
+        <ModalOverlay w={{base: '150vw', md: '100vw'}} h={{base: '150vh', md: '100vh'}}/>
         <ModalContent>
           <ModalHeader>{description}</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-            <Box as="div" w="100vw">
-              {children}
-            </Box>
+            {children}
           </ModalBody>
 
           <ModalFooter>
