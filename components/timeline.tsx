@@ -28,19 +28,21 @@ interface ITimelineItem {
 }
 
 export const TimelineItem: React.FunctionComponent<ITimelineItem> = ({time, description, children}: TimelineItemProps) => {
-  const { isOpen, onOpen, onClose } = useDisclosure()
+  const { isOpen, onOpen, onClose } = useDisclosure();
   const title = `${time} | ${description}`;
   return (
     <Box>
-      <Button onClick={onOpen}>{title}</Button>
+      <Button onClick={onOpen} scrollBehavior='inside'>{title}</Button>
 
-      <Modal isOpen={isOpen} onClose={onClose}>
-        <ModalOverlay />
+      <Modal isOpen={isOpen} onClose={onClose} isCentered>
+        <ModalOverlay w="150vw" h="150vh"/>
         <ModalContent>
           <ModalHeader>{description}</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-            {children}
+            <Box as="div" w="100vw">
+              {children}
+            </Box>
           </ModalBody>
 
           <ModalFooter>

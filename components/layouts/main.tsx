@@ -11,6 +11,7 @@ const Main = ({children,router}) => {
         <meta charSet="utf-8"/>
         <link rel="icon" href={img}/>
         <meta name="description" content="Daniel Fenz. Programmer, Web-Developer, Music Enthusiast. My personal webpage"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="author" content="Daniel Fenz" />
         <meta name="keywords" content="Daniel Fenz, Fenz, fenz.io, developer"/>
         <meta name="googlebot" content="index, follow"/>
