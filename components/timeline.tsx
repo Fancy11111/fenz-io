@@ -11,7 +11,6 @@ import {
   Box,
   Container,
   Flex,
-  Divider,
   useColorModeValue
 } from "@chakra-ui/react"
 import { ReactElement } from "react";
