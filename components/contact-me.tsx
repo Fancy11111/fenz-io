@@ -1,4 +1,4 @@
-import { Box, Link, IconButton, HStack } from '@chakra-ui/react';
+import { StackDivider, Link, IconButton, HStack, useColorModeValue } from '@chakra-ui/react';
 import { FaEnvelope, FaInstagram, FaLinkedin, FaSpotify, FaTwitch, FaTwitter } from 'react-icons/fa';
 
 type ContactBoxProps = {
@@ -14,7 +14,11 @@ const ContactBox = ({href, icon}: ContactBoxProps) => {
 
 const ContactMe = () => {
   return (
-    <HStack>
+    <HStack 
+      divider={<StackDivider borderColor={useColorModeValue('black', 'whiteAlpha900')} />} 
+      align="center" 
+      justify="space-between"
+    >
       <ContactBox href="mailTo:daniel@fenz.io" icon={<FaEnvelope />} />
       <ContactBox href="https://www.instagram.com/dafenz/" icon={<FaInstagram />} />
       <ContactBox href="https://twitter.com/FancyFenzi" icon={<FaTwitter />} />
