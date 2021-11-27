@@ -1,4 +1,4 @@
-import { Container, Box, Image, Heading, Link } from '@chakra-ui/react';
+import { Container, Box, Image, Heading, Link, Flex } from '@chakra-ui/react';
 import Card from '../components/card';
 import ContactMe from '../components/contact-me';
 import Section from '../components/section';
@@ -7,7 +7,7 @@ import { TimelineItem, Timeline } from '../components/timeline';
 const Page = () => {
   const introText = 'Hi, I\'m Daniel, a software engineer(ing student) from Austria'
   return (
-    <Container>
+    <Container w="container.xl">
       <Box borderRadius="lg" bg="primary" p={3} mb={6} align="center">
         {introText}
       </Box>
@@ -41,7 +41,7 @@ const Page = () => {
               I was taught Python, Java, C#, C++, Javascript, SQL Server, Oracle Server, SQL Server and basics of project management.
             </p>
           </TimelineItem>
-          <TimelineItem time="2020-now" description="Bsc. Software & Information Engineering @ TU Wien">
+          <TimelineItem time="2020-now" description="TU Wien">
             <p>
               In September of 2020 I started my Bachelor in <Link 
                 href="https://www.tuwien.at/en/studies/studies/bachelor-programmes/computer-science-and-business-informatics#c290809" 
@@ -94,7 +94,11 @@ const Page = () => {
         <Heading as="h3" variant="section-title">
           Projects
         </Heading> 
-        <Card title="Me" imageUrl="/me.png" text="Yep, that's me. You probably wondered how I ended up here"/>
+        <Flex direction={{base:'column', md:'row'}} wrap="wrap">
+          <Card title="Me" imageUrl="/me.png" text="Yep, that's me. You probably wondered how I ended up here"/>
+          <Card title="Robin Mood" imageUrl="/rmlogo.svg" text="A employee satisfaction survey tool"/>
+          <Card title="TGI Pages" imageUrl="/tgi-pages.png" text="An assortment of little tools to help students through introductory IT lectures"/>
+        </Flex>
       </Section>
       <Section>
         <Heading as="h3" variant="section-title">
