@@ -1,18 +1,15 @@
-import { Box, Image, AspectRatio } from '@chakra-ui/react';
+import { Box } from '@chakra-ui/react';
 
 type CardProps = {
   title?: string,
   text?: string,
-  imageUrl?: string,
-  imageAlt?: string
+  children: any
 }
 
-const Card = ({title, text, imageUrl, imageAlt}: CardProps) => {
+const Card = ({title, text, children}: CardProps) => {
   return (
-    <Box flexShrink={1} w={'16rem'} h={'16rem'} borderWidth="1px" borderRadius="lg" overflow="hidden" justify="content" align="center">
-      <AspectRatio ratio={1/1} w={'8rem'}> 
-        <Image src={imageUrl} alt={imageAlt} borderRadius="lg" objectFit="cover" p={5} />
-      </AspectRatio>
+    <Box flexShrink={1} w={'13rem'} h={'18rem'} borderWidth="1px" borderRadius="lg" overflow="hidden" justify="content" align="center">
+      {children}
       <Box p="6">
 
         {title !== undefined ? (<Box

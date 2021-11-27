@@ -1,4 +1,4 @@
-import { Container, Box, Image, Heading, Link, Flex } from '@chakra-ui/react';
+import { Container, Box, Image, Heading, Link, Flex, AspectRatio } from '@chakra-ui/react';
 import Card from '../components/card';
 import ContactMe from '../components/contact-me';
 import Section from '../components/section';
@@ -94,10 +94,22 @@ const Page = () => {
         <Heading as="h3" variant="section-title">
           Projects
         </Heading> 
-        <Flex direction={{base:'column', md:'row'}} wrap="wrap">
-          <Card title="Me" imageUrl="/me.png" text="Yep, that's me. You probably wondered how I ended up here"/>
-          <Card title="Robin Mood" imageUrl="/rmlogo.svg" text="A employee satisfaction survey tool"/>
-          <Card title="TGI Pages" imageUrl="/tgi-pages.png" text="An assortment of little tools to help students through introductory IT lectures"/>
+        <Flex direction={{base:'column', md:'row'}} wrap="wrap" justify="space-between" align="center">
+          <Card title="Me" text="Yep, that's me. You probably wondered how I ended up here"> 
+            <AspectRatio ratio={16/9}>
+              <Image src="/me.png"  alt="Image of me"/>
+            </AspectRatio>
+          </Card>
+          <Card title="Robin Mood" text="An assortment of little tools to help students through introductory IT lectures"> 
+            <AspectRatio ratio={5.8/1}>
+              <Image src="/rmlogo.svg"  alt="Robin Mood logo"/>
+            </AspectRatio>
+          </Card>
+          <Card title="TGI Pages" text="An assortment of tools to help students in introductory IT lectures"> 
+            <AspectRatio ratio={16/9}>
+              <Image src="/tgi-pages.png"  alt="TGI Pages Logo"/>
+            </AspectRatio>
+          </Card>
         </Flex>
       </Section>
       <Section>
