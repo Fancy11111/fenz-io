@@ -1,5 +1,5 @@
 
-import { Container, Box, Image, Heading, Link, Flex, AspectRatio, Text } from '@chakra-ui/react';
+import { Container, Box, Image, Heading, Link, Stack, AspectRatio, Text, Spacer } from '@chakra-ui/react';
 import Card from '../components/card';
 import Section from '../components/section';
 import BlogPreview from '../components/blog/blog-preview';
@@ -9,12 +9,12 @@ import NextLink from 'next/link';
 const Page = () => {
   const introText = 'Hi, I\'m Daniel, a software engineer(ing student) from Austria'
   return (
-    <Container>
+    <Container maxW={{base: 'container.sm', xl: 'container.md'}}>
       <Box borderRadius="lg" bg="primary" p={3} mb={6} align="center">
         {introText}
       </Box>
-      <Box display={{md:'flex'}}>
-        <Box flexGrow={1}>
+      <Box display={{md:'flex'}} as="div" maxW="container.sm">
+        <Box flexGrow={0.5}>
           <Heading as="h2">Daniel Fenz</Heading>
           <p>Software Engineer and Music Enthusiast</p>
         </Box>
@@ -96,23 +96,25 @@ const Page = () => {
         <Heading as="h3" variant="section-title">
           Projects
         </Heading> 
-        <Flex direction={{base:'column', md:'row'}} wrap="wrap" justify="space-between" align="center">
-          <Card title="Me" text="Yep, that's me. You probably wondered how I ended up here"> 
-            <AspectRatio ratio={16/9}>
-              <Image src="/me.png"  alt="Image of me"/>
-            </AspectRatio>
-          </Card>
-          <Card title="Robin Mood" text="An assortment of little tools to help students through introductory IT lectures"> 
-            <AspectRatio ratio={5.8/1}>
-              <Image src="/rmlogo.svg"  alt="Robin Mood logo"/>
-            </AspectRatio>
-          </Card>
-          <Card title="TGI Pages" text="An assortment of tools to help students in introductory IT lectures"> 
-            <AspectRatio ratio={16/9}>
-              <Image src="/tgi-pages.png"  alt="TGI Pages Logo"/>
-            </AspectRatio>
-          </Card>
-        </Flex>
+        <Stack direction={{base:'column', sm:'row', md:'row'}} wrap="wrap" justify="space-between" align="center" space>
+          <Spacer />
+          <Link href="https://robinmood.eu/" target="_blank">
+            <Card title="Robin Mood" text="An assortment of little tools to help students through introductory IT lectures" > 
+              <AspectRatio ratio={5.8/1}>
+                <Image src="/rmlogo.svg"  alt="Robin Mood logo"/>
+              </AspectRatio>
+            </Card>
+          </Link>
+          <Spacer />
+          <Link href="https://robinmood.eu/" target="_blank">
+            <Card title="TGI Pages" text="An assortment of tools to help students in introductory IT lectures"> 
+              <AspectRatio ratio={16/9}>
+                <Image src="/tgi-pages.png"  alt="TGI Pages Logo"/>
+              </AspectRatio>
+            </Card>
+          </Link>
+          <Spacer />
+        </Stack>
       </Section>
       <Section>
         <Heading as="h3" variant="section-title">

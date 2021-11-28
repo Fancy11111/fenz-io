@@ -32,7 +32,7 @@ export const TimelineItem: React.FunctionComponent<ITimelineItem> = ({time, desc
   const title = `${time} | ${description}`;
   return (
     <Box>
-      <Button onClick={onOpen}>{title}</Button>
+      <Button bg={useColorModeValue('#b54b5670', '#b54b5690')} onClick={onOpen}>{time}</Button>
 
       <Modal isOpen={isOpen} onClose={onClose} isCentered>
         <ModalOverlay/>
@@ -66,7 +66,7 @@ type TimelineProps = {
 
 export const Timeline = ({children}: TimelineProps) => {
   return (
-    <Container pt={2} pb={2} borderRadius="md" bg={'secondaryAccent'}>
+    <Container pt={2} pb={2} borderRadius="md" bg={useColorModeValue('#82e9de60', '#4db6ac40')}>
       <Stack direction="column" align="center" justify="space-between" divider={<VertBar />}>
         {children}
         {/* {children.slice(0,1)}
