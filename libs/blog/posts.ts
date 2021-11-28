@@ -63,8 +63,13 @@ export type Post = {
     description: string
   },
   title: string,
-  introText?: string
+  introText?: string,
+  paragraph: {
+    json: any
+  }
 }
+
+export type PostResponse = BlogPostCollectionResponse<Post>;
 
 export const GET_POST = gql`
     query Post($search: String!){
