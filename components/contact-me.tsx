@@ -8,7 +8,7 @@ type ContactBoxProps = {
 
 const ContactBox = ({href, icon}: ContactBoxProps) => {
   return (
-    <Link href={href} hrefPass target="_blank"><IconButton icon={icon} aria-label="social media link"></IconButton></Link>
+    <Link href={href} target="_blank"><IconButton icon={icon} aria-label="social media link"></IconButton></Link>
   )
 }
 

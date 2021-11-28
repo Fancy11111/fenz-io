@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import { Box, Container } from '@chakra-ui/react';
 import Navbar from '../navbar';
+import Footer from '../footer';
 
 const Main = ({children,router}) => {
   const img = `/logo-dark.png`
@@ -21,9 +22,10 @@ const Main = ({children,router}) => {
         <meta name="og:title" property="og:title" content="Daniel Fenz"/>
       </Head>
       <Navbar path={router.asPath} />
-      <Container maxW="container.md" pt={14}>
+      <Container w="container.xl" pt={14}>
         {children}
       </Container>
+      <Footer />
     </Box>
   )
 }
