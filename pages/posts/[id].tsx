@@ -1,9 +1,8 @@
-import { AspectRatio, Container, Heading, Image, Divider, Code, Text } from "@chakra-ui/react";
+import { AspectRatio, Container, Heading, Image, Divider, Code } from "@chakra-ui/react";
 import { client } from "../../libs/blog/contentful";
 import { GET_POST, GET_POST_NAMES } from "../../libs/blog/posts";
 import { MARKS, BLOCKS } from '@contentful/rich-text-types';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import Paragraph from "../../components/paragraph";
 
 let key = 1000;
 
