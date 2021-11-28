@@ -8,14 +8,14 @@ type ContactBoxProps = {
 
 const ContactBox = ({href, icon}: ContactBoxProps) => {
   return (
-    <Link href={href} target="_blank"><IconButton icon={icon} aria-label="social media link"></IconButton></Link>
+    <Link href={href} target="_blank"><IconButton icon={icon} aria-label="social media link" color={useColorModeValue('primaryDark', 'primaryLight')}></IconButton></Link>
   )
 }
 
 const ContactMe = () => {
   return (
     <HStack 
-      divider={<StackDivider borderColor={useColorModeValue('black', 'whiteAlpha900')} />} 
+      divider={<StackDivider borderColor={useColorModeValue('secondary', 'secondaryLight')} />} 
       align="center" 
       justify="space-between"
     >
