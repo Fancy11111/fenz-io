@@ -13,7 +13,7 @@ const BlogPreviewItem = ({name, title, introText, contentfulMetadata, sys, heade
     <Box display="flex" flexDirection="column" alignContent="center" justifyContent="center" flexShrink={1} borderWidth="1px" borderRadius="lg" maxW="15rem" h="15rem" overflow="hidden" justify="content" align="center">
         {headerImage ? 
           <AspectRatio ratio={headerImage.width/headerImage.height} maxH={100}>
-            <Image src={headerImage.url}  alt={headerImage.fileName}/>
+            <Image src={headerImage.url}  alt={headerImage.description}/>
           </AspectRatio> : <></>
         }
         <Spacer />

@@ -25,7 +25,7 @@ const Post = ({title, headerImage, introText, paragraph}) => {
     <Container w="container.xl">
       <Heading as="h1">{title}</Heading>
       {headerImage ? <AspectRatio ratio={headerImage.width/headerImage.height}>
-              <Image src={headerImage.url}  alt={headerImage.fileName}/>
+              <Image src={headerImage.url}  alt={headerImage.description}/>
             </AspectRatio> : <></>}
       {introText}
       {documentToReactComponents(paragraph.json, options)}

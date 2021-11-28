@@ -8,7 +8,8 @@ export type PostPreview = {
     url: string,
     width: number,
     height: number,
-    fileName: string
+    fileName: string,
+    description: string
   },
   title: string,
   introText?: string
@@ -25,7 +26,8 @@ query Blogs($limit: Int!, $skip: Int!) {
         url,
         width, 
         height,
-        fileName
+        fileName,
+        description
       }, 
       ${MetaDataQuery}
       title, 
@@ -57,7 +59,8 @@ export type Post = {
     url: string,
     width: number,
     height: number,
-    fileName: string
+    fileName: string,
+    description: string
   },
   title: string,
   introText?: string
