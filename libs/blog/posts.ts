@@ -41,7 +41,10 @@ export const GET_POST = gql`
           height
         }, 
         title, 
-        introText
+        introText,
+        paragraph {
+          json
+        }
       }
     }
   }

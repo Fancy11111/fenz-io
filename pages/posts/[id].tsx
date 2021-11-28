@@ -1,15 +1,36 @@
-import { AspectRatio, Container, Heading, Image } from "@chakra-ui/react";
+import { AspectRatio, Container, Heading, Image, Divider, Code, Text } from "@chakra-ui/react";
 import { client } from "../../libs/blog/contentful";
 import { GET_POST, GET_POST_NAMES } from "../../libs/blog/posts";
+import { MARKS, BLOCKS } from '@contentful/rich-text-types';
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import Paragraph from "../../components/paragraph";
 
-const Post = ({title, headerImage}) => {
+let key = 1000;
+
+const options = {
+  renderNode: {
+    [BLOCKS.HEADING_1]: (_, text) => <Heading as="h1" key={text+'-key'}>{text}</Heading>,
+    [BLOCKS.HEADING_2]: (_, text) => <Heading as="h2" key={text+'-key'}>{text}</Heading>,
+    [BLOCKS.HEADING_3]: (_, text) => <Heading as="h3" key={text+'-key'}>{text}</Heading>,
+    [BLOCKS.HEADING_4]: (_, text) => <Heading as="h4" key={text+'-key'}>{text}</Heading>,
+    [BLOCKS.HR]: () => <Divider mt={4} mb={4} orientation="horizontal" key={key++}/>,
+  },
+  renderMark: {
+    [MARKS.CODE]: text => <Code key={text+'-key'}>{text}</Code>,
+  },
+}
+
+const Post = ({title, headerImage, introText, paragraph}) => {
+  console.log(paragraph);
+  
   return (
     <Container w="container.xl">
-      <Heading as="h2">{title}</Heading>
-
+      <Heading as="h1">{title}</Heading>
       {headerImage ? <AspectRatio ratio={headerImage.width/headerImage.height}>
               <Image src={headerImage.url}  alt={headerImage.fileName}/>
             </AspectRatio> : <></>}
+      {introText}
+      {documentToReactComponents(paragraph.json, options)}
       
     </Container>
   )
