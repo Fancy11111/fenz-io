@@ -7,9 +7,10 @@ import ThemeToggleButton from "./theme-toggle-button";
 const LinkItem = ({href, path, children}) => {
   const active = path === href;
   const inactiveColor = useColorModeValue('gray200', 'whiteAlpha900');
+  const activeColor = useColorModeValue('primaryDark', 'primaryLight');
   return (
     <NextLink href={href}>
-      <Link p={2} bg={active ? 'lightTeal' : undefined} color={active ? '#103010' : inactiveColor}>
+      <Link p={2} bg={active ? 'lightTeal' : undefined} color={active ? activeColor : inactiveColor}>
         {children}
       </Link>
     </NextLink>
@@ -58,7 +59,7 @@ const Navbar = props => {
         <Box flex={1} align="right">
           <ThemeToggleButton />
           <Box ml={2} display={{base: 'inline-block', md:'none'}}>
-            <Menu id="navbar">
+            <Menu>
               <MenuButton as={IconButton} icon={<HamburgerIcon />} variant="outline" aria-label="menu"/>
               <MenuList>
                 <MobileNavLink text="Home" path="/"></MobileNavLink>

@@ -1,4 +1,4 @@
-import { Box, Spacer } from '@chakra-ui/react';
+import { Box, Spacer,Link } from '@chakra-ui/react';
 import NextLink from 'next/link';
 
 type CardProps = {
@@ -23,7 +23,7 @@ const Card = ({title, text, children, link}: CardProps) => {
           lineHeight="tight"
           isTruncated
         >
-          {link ? <NextLink href={link}>{title}</NextLink> : <>{title}</>}
+          {link ? <NextLink href={link}><Link>{title}</Link></NextLink> : <>{title}</>}
         </Box>)
         : <></>}
 

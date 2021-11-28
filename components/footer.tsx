@@ -4,7 +4,7 @@ import Section from "./section";
 
 const Footer = () => {
   return (
-  <Container>
+  <Container mt={10}>
     <Heading as="h3" variant="section-title">
       Contact me
     </Heading> 
