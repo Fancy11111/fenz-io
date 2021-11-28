@@ -41,7 +41,7 @@ const options = {
 }
 
 const Post = ({title, headerImage, introText, paragraph}: Post & MetaData) => {
-  const textColor = useColorModeValue('rgba(117, 117, 117, 1)', 'gray');
+  const textColor = useColorModeValue('rgba(117, 117, 117, 1)', 'rgba(140, 140, 140, 200)');
   return (
     <Container>
       <Head>
@@ -49,15 +49,18 @@ const Post = ({title, headerImage, introText, paragraph}: Post & MetaData) => {
         <meta name="title" content={"Daniel Fenz - " + title}/>
         <meta name="og:title" property="og:title" content={"Daniel Fenz - " + title}/>
       </Head>
-      <Box as="div" borderColor={useColorModeValue('primaryLight', 'primaryDark')} border={`1px solid`}>
+      <Box as="div" borderColor={useColorModeValue('primaryLight', 'primaryDark')} border={`1px solid`} justifyContent="center">
+        <Stack direction="column" justify="center">
         {headerImage ? 
-          <Stack direction="column" justify="center">
-            <AspectRatio ratio={headerImage.width/headerImage.height}>
-              <Image src={headerImage.url}  alt={headerImage.description}/>
-            </AspectRatio>
-            <Text color={textColor}>{introText}</Text>
-          </Stack> : <></>}
-        <Heading as="h1">{title}</Heading>
+            <>
+              <AspectRatio ratio={headerImage.width/headerImage.height}>
+                <Image src={headerImage.url}  alt={headerImage.description}/>
+              </AspectRatio>
+              <Text color={textColor}>{introText}</Text>
+              <Heading as="h1">{title}</Heading>
+            </>
+           : <></>}
+          </Stack>
       </Box>
       {documentToReactComponents(paragraph.json, options)}
       
