@@ -49,7 +49,6 @@ const Blog = ({amount}) => {
 export async function getStaticProps(_) {
   // Fetch necessary data for the blog post using params.id
   const res = await client.query({query: AMOUNT_OF_POSTS});
-  console.log(res);
   
   return {props: {amount: res.data.blogPostCollection.total} };
 }

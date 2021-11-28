@@ -2,7 +2,6 @@ import { ApolloClient, createHttpLink, InMemoryCache } from "@apollo/client";
 import { setContext } from '@apollo/client/link/context';
 
 const accessToken = process.env.NEXT_PUBLIC_CONTENTFUL_API;
-console.log(accessToken);
 
 
 const httpLink = createHttpLink({

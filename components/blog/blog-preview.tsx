@@ -52,10 +52,6 @@ const BlogPreviewItem = ({name, title, introText, contentfulMetadata, sys, heade
 
 const BlogPreview = ({limit, skip}) => {
   const { loading, data, error } = useQuery<PostPreviewResponse>(GET_POST_PREVIEWS, {variables: {limit, skip}});
-  if(!loading) {
-    console.log(data);
-    console.log(error);
-  }
 
   return (
     <>

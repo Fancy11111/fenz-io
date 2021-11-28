@@ -20,7 +20,6 @@ const options = {
 }
 
 const Post = ({title, headerImage, introText, paragraph}) => {
-  console.log(paragraph);
   
   return (
     <Container w="container.xl">
