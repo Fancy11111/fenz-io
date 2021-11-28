@@ -3,15 +3,16 @@ import { client, MetaData } from "../../../libs/blog/contentful";
 import { GET_POST, GET_POST_NAMES, Post, PostResponse } from "../../../libs/blog/posts";
 import { MARKS, BLOCKS, INLINES } from '@contentful/rich-text-types';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import Head from 'next/head';
 
 let key = 1000;
 
 const options = {
   renderNode: {
-    [BLOCKS.HEADING_1]: (_, text) => <Heading as="h1" key={text+'-key'}>{text}</Heading>,
-    [BLOCKS.HEADING_2]: (_, text) => <Heading as="h2" key={text+'-key'}>{text}</Heading>,
-    [BLOCKS.HEADING_3]: (_, text) => <Heading as="h3" key={text+'-key'}>{text}</Heading>,
-    [BLOCKS.HEADING_4]: (_, text) => <Heading as="h4" key={text+'-key'}>{text}</Heading>,
+    [BLOCKS.HEADING_1]: (_, text) => <><br /><Heading as="h1" key={text+'-key'}>{text}</Heading></>,
+    [BLOCKS.HEADING_2]: (_, text) => <><br /><Heading as="h2" key={text+'-key'}>{text}</Heading></>,
+    [BLOCKS.HEADING_3]: (_, text) => <><br /><Heading as="h3" key={text+'-key'}>{text}</Heading></>,
+    [BLOCKS.HEADING_4]: (_, text) => <><br /><Heading as="h4" key={text+'-key'}>{text}</Heading></>,
     [BLOCKS.OL_LIST]: (children, text) => (
     <OrderedList key={text+'-key'}>
       {children.content.map((v) => 
@@ -43,12 +44,16 @@ const Post = ({title, headerImage, introText, paragraph}: Post & MetaData) => {
   
   return (
     <Container w="container.xl">
+      <Head>
+        <meta name="description" content={introText}/>
+        <meta name="title" content={"Daniel Fenz - " + title}/>
+        <meta name="og:title" property="og:title" content={"Daniel Fenz - " + title}/>
+      </Head>
       <Box as="div" borderColor={useColorModeValue('primaryLight', 'primaryDark')} border={`1px solid`}>
         <Heading as="h1">{title}</Heading>
         {headerImage ? <AspectRatio ratio={headerImage.width/headerImage.height}>
                 <Image src={headerImage.url}  alt={headerImage.description}/>
               </AspectRatio> : <></>}
-        {introText}
       </Box>
       {documentToReactComponents(paragraph.json, options)}
       
