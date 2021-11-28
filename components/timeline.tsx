@@ -10,7 +10,7 @@ import {
   Button,
   Box,
   Container,
-  Flex,
+  Stack,
   useColorModeValue
 } from "@chakra-ui/react"
 import { ReactElement } from "react";
@@ -56,7 +56,7 @@ export const TimelineItem: React.FunctionComponent<ITimelineItem> = ({time, desc
 
 const VertBar = () => {
   return (
-    <Box as="div" h={6} mt={4} mb={4} borderLeftWidth={1} borderRightWidth={0} border="solid" w={1} borderColor={useColorModeValue('#0f0f0f90', '#f0f0f0c0')} />
+    <Box as="div" h={5} mt={3} mb={3} borderLeftWidth={1} borderRightWidth={0} border="solid" w={1} borderColor={useColorModeValue('#0f0f0f90', '#f0f0f0c0')} />
   )
 }
 
@@ -67,10 +67,11 @@ type TimelineProps = {
 export const Timeline = ({children}: TimelineProps) => {
   return (
     <Container pt={2} pb={2} borderRadius="md" bg={'secondaryAccent'}>
-      <Flex direction="column" align="center" justify="space-between">
-        {children.slice(0,1)}
-        {children.slice(1).map((c, i) => (<> <VertBar key={i}/> {c} </>))}
-      </Flex>
+      <Stack direction="column" align="center" justify="space-between" divider={<VertBar />}>
+        {children}
+        {/* {children.slice(0,1)}
+        {children.slice(1).map((c) => (<><VertBar /> <>{c}</> </>))} */}
+      </Stack>
     </Container>
   )
 }
