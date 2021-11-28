@@ -16,7 +16,7 @@ const Page = () => {
       <Box display={{md:'flex'}}>
         <Box flexGrow={1}>
           <Heading as="h2">Daniel Fenz</Heading>
-          <p>Software Engineer (Frontend, Backend) and Music Enthusiast</p>
+          <p>Software Engineer and Music Enthusiast</p>
         </Box>
         <Box flexShrink={0} mt={{base: 4, md: 0}} ml={{md: 6}} align="center">
           <Image 
