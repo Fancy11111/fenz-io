@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import BlogPreview from '../components/blog/blog-preview';
-import { Container, Flex, Stack, Radio, Select, RadioGroup, Box, FormControl, FormLabel } from '@chakra-ui/react';
+import { Container, Select, Box, FormControl, FormLabel } from '@chakra-ui/react';
 
 import { client } from '../libs/blog/contentful';
 import { AMOUNT_OF_POSTS } from '../libs/blog/posts';
