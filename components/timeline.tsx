@@ -29,7 +29,6 @@ interface ITimelineItem {
 
 export const TimelineItem: React.FunctionComponent<ITimelineItem> = ({time, description, children}: TimelineItemProps) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const title = `${time} | ${description}`;
   return (
     <Box>
       <Button bg={useColorModeValue('#b54b5670', '#b54b5690')} onClick={onOpen}>{time}</Button>
