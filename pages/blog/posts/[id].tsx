@@ -1,6 +1,6 @@
 import { AspectRatio, Container, Heading, Image, Divider, Code } from "@chakra-ui/react";
-import { client } from "../../libs/blog/contentful";
-import { GET_POST, GET_POST_NAMES } from "../../libs/blog/posts";
+import { client } from "../../../libs/blog/contentful";
+import { GET_POST, GET_POST_NAMES } from "../../../libs/blog/posts";
 import { MARKS, BLOCKS } from '@contentful/rich-text-types';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
@@ -40,7 +40,7 @@ export default Post;
 export async function getStaticPaths() {
   // Return a list of possible value for id
   const res = await client.query({query: GET_POST_NAMES});
-  return {paths: res.data.blogPostCollection.items.map(p => `/posts/${p.name}`), fallback: false}
+  return {paths: res.data.blogPostCollection.items.map(p => `/blog/posts/${p.name}`), fallback: false}
 }
 
 export async function getStaticProps({ params }) {

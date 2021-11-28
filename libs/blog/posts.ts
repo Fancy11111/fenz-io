@@ -1,8 +1,24 @@
 import gql from "graphql-tag";
 
+import { BlogPostCollectionResponse, MetaDataQuery } from "./contentful";
+
+export type PostPreview = {
+  name: string,
+  headerImage?: {
+    url: string,
+    width: number,
+    height: number,
+    fileName: string
+  },
+  title: string,
+  introText?: string
+}
+
+export type PostPreviewResponse = BlogPostCollectionResponse<PostPreview>;
+
 export const GET_POST_PREVIEWS = gql`
-query Blogs {
-  blogPostCollection(limit: 3) {
+query Blogs($limit: Int!, $skip: Int!) {
+  blogPostCollection(limit: $limit, skip: $skip) {
     items {
       name, 
       headerImage {
@@ -11,12 +27,19 @@ query Blogs {
         height,
         fileName
       }, 
+      ${MetaDataQuery}
       title, 
-      introText
+      introText,
     }
   }
 }
 `
+
+type PostNames = {
+  name: string
+}
+
+export type PostNameResponse = BlogPostCollectionResponse<PostNames>
 
 export const GET_POST_NAMES = gql`
   query PostNames {
@@ -27,6 +50,18 @@ export const GET_POST_NAMES = gql`
     }
   }
 `
+
+export type Post = {
+  name: string,
+  headerImage?: {
+    url: string,
+    width: number,
+    height: number,
+    fileName: string
+  },
+  title: string,
+  introText?: string
+}
 
 export const GET_POST = gql`
     query Post($search: String!){
@@ -44,8 +79,15 @@ export const GET_POST = gql`
         introText,
         paragraph {
           json
-        }
+        },
+        ${MetaDataQuery}
       }
     }
+  }
+`
+
+export const AMOUNT_OF_POSTS = gql`
+  query Blogs {
+    blogPostCollection {total}
   }
 `

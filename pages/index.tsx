@@ -1,19 +1,12 @@
-import { useQuery } from '@apollo/client/react';
-import { Container, Box, Image, Heading, Link, Flex, AspectRatio, CircularProgress } from '@chakra-ui/react';
+
+import { Container, Box, Image, Heading, Link, Flex, AspectRatio, Text } from '@chakra-ui/react';
 import Card from '../components/card';
-import ContactMe from '../components/contact-me';
 import Section from '../components/section';
+import BlogPreview from '../components/blog/blog-preview';
 import { TimelineItem, Timeline } from '../components/timeline';
-import { GET_POST_PREVIEWS } from '../libs/blog/posts';
+import NextLink from 'next/link';
 
 const Page = () => {
-  const { loading, data, error } = useQuery(GET_POST_PREVIEWS);
-  if(!loading) {
-    console.log(data);
-    console.log(error);
-    
-  }
-
   const introText = 'Hi, I\'m Daniel, a software engineer(ing student) from Austria'
   return (
     <Container w="container.xl">
@@ -123,21 +116,10 @@ const Page = () => {
       </Section>
       <Section>
         <Heading as="h3" variant="section-title">
-          My Blog
+          Blog
         </Heading> 
-        {loading ? <CircularProgress isIndeterminate color="green.300" /> :data.blogPostCollection.items.map(e => 
-        <Card key={e.name} title={e.title} text={e.introText} link={`/posts/${e.name}`}>
-            {e.headerImage ? <AspectRatio ratio={e.headerImage.width/e.headerImage.height}>
-              <Image src={e.headerImage.url}  alt={e.headerImage.fileName}/>
-            </AspectRatio> : <></>}
-            
-        </Card>)}
-      </Section>
-      <Section>
-        <Heading as="h3" variant="section-title">
-          Contact me
-        </Heading> 
-        <ContactMe></ContactMe>
+        <Section><Text>See my latest Blog Post down below or click <NextLink href="/blog">here</NextLink> to search through them</Text></Section>
+        <BlogPreview limit={1} skip={0} />
       </Section>
       {/*  */}
     </Container>
