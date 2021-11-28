@@ -35,7 +35,7 @@ export const TimelineItem: React.FunctionComponent<ITimelineItem> = ({time, desc
       <Button onClick={onOpen}>{title}</Button>
 
       <Modal isOpen={isOpen} onClose={onClose} isCentered>
-        <ModalOverlay w={{base: '150vw', md: '100vw'}} h={{base: '150vh', md: '100vh'}}/>
+        <ModalOverlay/>
         <ModalContent>
           <ModalHeader>{description}</ModalHeader>
           <ModalCloseButton />

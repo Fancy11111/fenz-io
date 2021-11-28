@@ -9,7 +9,7 @@ import NextLink from 'next/link';
 const Page = () => {
   const introText = 'Hi, I\'m Daniel, a software engineer(ing student) from Austria'
   return (
-    <Container w="container.xl">
+    <Container>
       <Box borderRadius="lg" bg="primary" p={3} mb={6} align="center">
         {introText}
       </Box>

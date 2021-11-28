@@ -27,7 +27,7 @@ const Blog = ({amount}) => {
   
   
   return ( 
-    <Container w="container.xl">
+    <Container>
       <Flex>
         <Select maxW="5em" defaultValue={limit} onChange={handleLimitChange}>
           <option value={1} >1</option>

@@ -1,4 +1,4 @@
-import { AspectRatio, Container, Heading, Image, Divider, Code, OrderedList, ListItem, Link, Box, useColorModeValue } from "@chakra-ui/react";
+import { AspectRatio, Container, Heading, Image, Divider, Code, OrderedList, ListItem, Link, Box, useColorModeValue, Stack, Text } from "@chakra-ui/react";
 import { client, MetaData } from "../../../libs/blog/contentful";
 import { GET_POST, GET_POST_NAMES, Post, PostResponse } from "../../../libs/blog/posts";
 import { MARKS, BLOCKS, INLINES } from '@contentful/rich-text-types';
@@ -41,19 +41,23 @@ const options = {
 }
 
 const Post = ({title, headerImage, introText, paragraph}: Post & MetaData) => {
-  
+  const textColor = useColorModeValue('rgba(117, 117, 117, 1)', 'gray');
   return (
-    <Container w="container.xl">
+    <Container>
       <Head>
         <meta name="description" content={introText}/>
         <meta name="title" content={"Daniel Fenz - " + title}/>
         <meta name="og:title" property="og:title" content={"Daniel Fenz - " + title}/>
       </Head>
       <Box as="div" borderColor={useColorModeValue('primaryLight', 'primaryDark')} border={`1px solid`}>
+        {headerImage ? 
+          <Stack direction="column" justify="center">
+            <AspectRatio ratio={headerImage.width/headerImage.height}>
+              <Image src={headerImage.url}  alt={headerImage.description}/>
+            </AspectRatio>
+            <Text color={textColor}>{introText}</Text>
+          </Stack> : <></>}
         <Heading as="h1">{title}</Heading>
-        {headerImage ? <AspectRatio ratio={headerImage.width/headerImage.height}>
-                <Image src={headerImage.url}  alt={headerImage.description}/>
-              </AspectRatio> : <></>}
       </Box>
       {documentToReactComponents(paragraph.json, options)}
       

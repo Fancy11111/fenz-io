@@ -4,12 +4,12 @@ import Section from "./section";
 
 const Footer = () => {
   return (
-  <Container display="flex" p={2} maxW="container.md" wrap="wrap" alignItems="center" justifyContent="center">
+  <Container>
+    <Heading as="h3" variant="section-title">
+      Contact me
+    </Heading> 
     <Section>
       <Flex direction="column" align="center" justify="center">
-        <Heading as="h3" variant="section-title">
-          Contact me
-        </Heading> 
         <ContactMe />
       </Flex>
     </Section>

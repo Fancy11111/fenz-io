@@ -22,10 +22,10 @@ const Main = ({children,router}) => {
         <meta name="og:title" property="og:title" content="Daniel Fenz"/>
       </Head>
       <Navbar path={router.asPath} />
-      <Container w="container.xl" pt={14}>
+      <Container w="container.md" pt={14}>
         {children}
+        <Footer />
       </Container>
-      <Footer />
     </Box>
   )
 }

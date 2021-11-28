@@ -22,6 +22,16 @@ const components = {
         marginBottom: 3
       }
     }
+  },  
+  Text: {
+    variant: {
+      'under-image': props => ({
+        textDecoration: 'none',
+        fontSize: 10,
+        marginTop: 3,
+        color: mode('#888888', '#888888')(props),
+      })
+    }
   },
   Link: {
     baseStyle: props => ({

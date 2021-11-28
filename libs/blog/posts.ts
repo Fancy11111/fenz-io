@@ -81,7 +81,8 @@ export const GET_POST = gql`
         headerImage {
           url,
           width, 
-          height
+          height,
+          description
         }, 
         title, 
         introText,
