@@ -69,7 +69,7 @@ export const Timeline = ({children}: TimelineProps) => {
     <Container pt={2} pb={2} borderRadius="md" bg={'secondaryAccent'}>
       <Flex direction="column" align="center" justify="space-between">
         {children.slice(0,1)}
-        {children.slice(1).map(c => (<> <VertBar/> {c} </>))}
+        {children.slice(1).map((c, i) => (<> <VertBar key={i}/> {c} </>))}
       </Flex>
     </Container>
   )

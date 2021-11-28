@@ -1,12 +1,14 @@
 import { Box } from '@chakra-ui/react';
+import NextLink from 'next/link';
 
 type CardProps = {
   title?: string,
   text?: string,
-  children: any
+  children?: any,
+  link?: string
 }
 
-const Card = ({title, text, children}: CardProps) => {
+const Card = ({title, text, children, link}: CardProps) => {
   return (
     <Box flexShrink={1} w={'13rem'} h={'18rem'} borderWidth="1px" borderRadius="lg" overflow="hidden" justify="content" align="center">
       {children}
@@ -18,7 +20,9 @@ const Card = ({title, text, children}: CardProps) => {
           as="h4"
           lineHeight="tight"
           isTruncated
-        >{title}</Box>)
+        >
+          {link ? <NextLink href={link}>{title}</NextLink> : <>{title}</>}
+        </Box>)
         : <></>}
 
         <Box>
