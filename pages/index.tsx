@@ -3,6 +3,7 @@ import { Container, Box, Image, Heading, Link, Stack, AspectRatio, Text, Spacer 
 import Card from '../components/card';
 import Section from '../components/section';
 import BlogPreview from '../components/blog/blog-preview';
+import Animated from '../components/animated';
 import { TimelineItem, Timeline } from '../components/timeline';
 import NextLink from 'next/link';
 
@@ -10,6 +11,7 @@ const Page = () => {
   const introText = 'Hi, I\'m Daniel, a software engineer(ing student) from Austria'
   return (
     <Container maxW={{base: 'container.sm', xl: 'container.md'}}>
+      <Animated />
       <Box borderRadius="lg" bg="primary" p={3} mb={6} align="center">
         {introText}
       </Box>
