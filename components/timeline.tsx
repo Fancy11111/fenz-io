@@ -65,7 +65,7 @@ type TimelineProps = {
 
 export const Timeline = ({children}: TimelineProps) => {
   return (
-    <Container pt={2} pb={2} borderRadius="md" bg={useColorModeValue('#00000030', '#ffffff10')}>
+    <Container pt={2} pb={2} borderRadius="md">
       <Stack direction="column" align="center" justify="space-between" divider={<VertBar />}>
         {children}
         {/* {children.slice(0,1)}
