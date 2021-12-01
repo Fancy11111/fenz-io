@@ -63,7 +63,7 @@ const BlogPreview = ({limit, skip}) => {
         {loading ? (<CircularProgress isIndeterminate color="green.300" />) : 
           (error ? 
             <Box><Text>Could not load Blog preview</Text></Box> : (
-            <Grid templateColumns={`repeat(${Math.min(data.blogPostCollection.items.length, 5)}, 1fr)`} gap={6}>
+            <Grid templateColumns={{base: 'repeat(1,1fr)',md:`repeat(${Math.min(data.blogPostCollection.items.length, 5)}, 1fr)`}} gap={6}>
               {data.blogPostCollection.items.map(e => 
                 <BlogPreviewItem 
                   title={e.title} 
