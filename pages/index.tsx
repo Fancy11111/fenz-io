@@ -1,5 +1,5 @@
 
-import { Container, Box, Image, Heading, Link, Stack, AspectRatio, Text, Spacer } from '@chakra-ui/react';
+import { Container, Box, Image, Heading, Link, Stack, AspectRatio, Text, Spacer, useColorModeValue,LinkOverlay  } from '@chakra-ui/react';
 import Card from '../components/card';
 import Section from '../components/section';
 import BlogPreview from '../components/blog/blog-preview';
@@ -8,9 +8,11 @@ import { TimelineItem, Timeline } from '../components/timeline';
 import NextLink from 'next/link';
 
 const Page = () => {
-  const introText = 'Hi, I\'m Daniel, a software engineer(ing student) from Austria'
+  const introText = 'Hi, I\'m Daniel, a software engineer(ing student) from Austria';
+  const linkColor = useColorModeValue('gray200', 'whiteAlpha900');
   return (
     <Container maxW={{base: 'container.sm', xl: 'container.md'}}>
+      <br />
       <Animated />
       <Box borderRadius="lg" bg="primary" p={3} mb={6} align="center">
         {introText}
@@ -100,21 +102,21 @@ const Page = () => {
         </Heading> 
         <Stack direction={{base:'column', sm:'row', md:'row'}} wrap="wrap" justify="space-between" align="center" space>
           <Spacer />
-          <Link href="https://robinmood.eu/" target="_blank">
+          <LinkOverlay  href="https://robinmood.eu/" target="_blank" color={linkColor}>
             <Card title="Robin Mood" text="An assortment of little tools to help students through introductory IT lectures" > 
               <AspectRatio ratio={5.8/1}>
                 <Image src="/rmlogo.svg"  alt="Robin Mood logo"/>
               </AspectRatio>
             </Card>
-          </Link>
+          </LinkOverlay >
           <Spacer />
-          <Link href="https://robinmood.eu/" target="_blank">
+          <LinkOverlay  href="https://robinmood.eu/" target="_blank" color={linkColor}>
             <Card title="TGI Pages" text="An assortment of tools to help students in introductory IT lectures"> 
               <AspectRatio ratio={16/9}>
                 <Image src="/tgi-pages.png"  alt="TGI Pages Logo"/>
               </AspectRatio>
             </Card>
-          </Link>
+          </LinkOverlay >
           <Spacer />
         </Stack>
       </Section>

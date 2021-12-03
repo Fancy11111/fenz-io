@@ -1,4 +1,4 @@
-import { Box, Spacer,Link } from '@chakra-ui/react';
+import { Box, Spacer,Link, useColorModeValue } from '@chakra-ui/react';
 import NextLink from 'next/link';
 
 type CardProps = {
@@ -9,8 +9,20 @@ type CardProps = {
 }
 
 const Card = ({title, text, children, link}: CardProps) => {
+  const linkColor = useColorModeValue('gray200', 'whiteAlpha900');
   return (
-    <Box flexShrink={1} w={'13rem'} h={'18rem'} borderWidth="1px" borderRadius="lg" overflow="hidden" justify="content" align="center" display="flex" flexDirection="column">
+    <Box 
+      flexShrink={1} 
+      w={'13rem'} 
+      h={'18rem'} 
+      borderWidth="1px" 
+      borderRadius="lg" 
+      overflow="hidden" 
+      justify="content" 
+      align="center" 
+      display="flex" 
+      flexDirection="column" 
+      bg={useColorModeValue('#f0f0f040', '#00000040')}>
       <Spacer/>
       {children}
       <Spacer/>
@@ -23,7 +35,7 @@ const Card = ({title, text, children, link}: CardProps) => {
           lineHeight="tight"
           isTruncated
         >
-          {link ? <NextLink href={link}><Link>{title}</Link></NextLink> : <>{title}</>}
+          {link ? <NextLink href={link}><Link color={linkColor}>{title}</Link></NextLink> : <>{title}</>}
         </Box>)
         : <></>}
 
