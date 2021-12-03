@@ -4,6 +4,7 @@ import { GET_POST, GET_POST_NAMES, Post, PostResponse } from "../../../libs/blog
 import { MARKS, BLOCKS, INLINES } from '@contentful/rich-text-types';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import Head from 'next/head';
+import Layout from "../../../components/layouts/article";
 
 let key = 1000;
 
@@ -43,28 +44,30 @@ const options = {
 const Post = ({title, headerImage, introText, paragraph}: Post & MetaData) => {
   const textColor = useColorModeValue('rgba(117, 117, 117, 1)', 'rgba(140, 140, 140, 200)');
   return (
-    <Container pt="3">
-      <Head>
-        <meta name="description" content={introText}/>
-        <meta name="title" content={"Daniel Fenz - " + title}/>
-        <meta name="og:title" property="og:title" content={"Daniel Fenz - " + title}/>
-      </Head>
-      <Box as="div" justifyContent="center" >
-        <Stack direction="column" justify="center">
-        {headerImage ? 
-            <>
-              <AspectRatio ratio={headerImage.width/headerImage.height}>
-                <Image src={headerImage.url}  alt={headerImage.description}  borderRadius="md"/>
-              </AspectRatio>
-              <Text color={textColor}>{introText}</Text>
-              <Heading as="h1">{title}</Heading>
-            </>
-           : <></>}
-          </Stack>
-      </Box>
-      {documentToReactComponents(paragraph.json, options)}
-      
-    </Container>
+    <Layout title={title}>
+      <Container pt="3">
+        <Head>
+          <meta name="description" content={introText}/>
+          <meta name="title" content={"Daniel Fenz - " + title}/>
+          <meta name="og:title" property="og:title" content={"Daniel Fenz - " + title}/>
+        </Head>
+        <Box as="div" justifyContent="center" >
+          <Stack direction="column" justify="center">
+          {headerImage ? 
+              <>
+                <AspectRatio ratio={headerImage.width/headerImage.height}>
+                  <Image src={headerImage.url}  alt={headerImage.description}  borderRadius="md"/>
+                </AspectRatio>
+                <Text color={textColor}>{introText}</Text>
+                <Heading as="h1">{title}</Heading>
+              </>
+            : <></>}
+            </Stack>
+        </Box>
+        {documentToReactComponents(paragraph.json, options)}
+        
+      </Container>
+    </Layout>
   )
 }
 

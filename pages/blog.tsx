@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import BlogPreview from '../components/blog/blog-preview';
-import { Container, Select, Box, FormControl, FormLabel } from '@chakra-ui/react';
+import { Container, Select, Box, FormControl, FormLabel, Heading } from '@chakra-ui/react';
 
 import { client } from '../libs/blog/contentful';
 import { AMOUNT_OF_POSTS } from '../libs/blog/posts';
 import { MyRadioGroup } from '../components/my-radio';
+import Layout from '../components/layouts/article';
 
 const Blog = ({amount}) => {
   const [limit, setLimit] = useState(10);
@@ -29,28 +30,31 @@ const Blog = ({amount}) => {
   
   
   return ( 
-    <Container maxW="container.lg" mt={5}>
-      <Container>
-        <FormControl id='limit'>
-          <FormLabel>Results per page</FormLabel>
-          <Select maxW="5em" defaultValue={limit} onChange={handleLimitChange}>
-            <option value={1} >1</option>
-            <option value={10} >10</option>
-            <option value={25}>25</option>
-            <option value={50}>50</option>
-          </Select>
-        </FormControl>
+    <Layout title="My Blog">
+      <Heading as="h1">My Blog</Heading>
+      <Container maxW="container.lg" mt={5}>
+        <Container>
+          <FormControl id='limit'>
+            <FormLabel>Results per page</FormLabel>
+            <Select maxW="5em" defaultValue={limit} onChange={handleLimitChange}>
+              <option value={1} >1</option>
+              <option value={10} >10</option>
+              <option value={25}>25</option>
+              <option value={50}>50</option>
+            </Select>
+          </FormControl>
+        </Container>
+        <Box as="div" minH="60vh" mt={10}>
+          <BlogPreview limit={limit} skip={(offset-1)*limit} />
+        </Box>
+        <Container mt={5}>
+          <FormControl id='page'>
+            <FormLabel>Page</FormLabel>
+            <MyRadioGroup onChange={handleOffsetChange} options={pages} defaultValue={1} name='pages'></MyRadioGroup>
+          </FormControl>
+        </Container>
       </Container>
-      <Box as="div" minH="60vh" mt={10}>
-        <BlogPreview limit={limit} skip={(offset-1)*limit} />
-      </Box>
-      <Container mt={5}>
-        <FormControl id='page'>
-          <FormLabel>Page</FormLabel>
-          <MyRadioGroup onChange={handleOffsetChange} options={pages} defaultValue={1} name='pages'></MyRadioGroup>
-        </FormControl>
-      </Container>
-    </Container>
+    </Layout>
   )
 }
 

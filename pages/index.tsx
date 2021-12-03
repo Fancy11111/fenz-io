@@ -1,5 +1,5 @@
 
-import { Container, Box, Image, Heading, Link, Stack, AspectRatio, Text, Spacer, useColorModeValue,LinkOverlay  } from '@chakra-ui/react';
+import { Container, Box, Image, Heading, Link, Stack, AspectRatio, Text, Spacer, useColorModeValue  } from '@chakra-ui/react';
 import Card from '../components/card';
 import Section from '../components/section';
 import BlogPreview from '../components/blog/blog-preview';
@@ -102,21 +102,21 @@ const Page = () => {
         </Heading> 
         <Stack direction={{base:'column', sm:'row', md:'row'}} wrap="wrap" justify="space-between" align="center" space>
           <Spacer />
-          <LinkOverlay  href="https://robinmood.eu/" target="_blank" color={linkColor}>
-            <Card title="Robin Mood" text="An assortment of little tools to help students through introductory IT lectures" > 
+          <Link href="https://robinmood.eu/" target="_blank" color={linkColor}>
+            <Card title="Robin Mood" text="An employee satisfaction survey tool" > 
               <AspectRatio ratio={5.8/1}>
                 <Image src="/rmlogo.svg"  alt="Robin Mood logo"/>
               </AspectRatio>
             </Card>
-          </LinkOverlay >
+          </Link >
           <Spacer />
-          <LinkOverlay  href="https://robinmood.eu/" target="_blank" color={linkColor}>
+          <Link  href="https://robinmood.eu/" target="_blank" color={linkColor}>
             <Card title="TGI Pages" text="An assortment of tools to help students in introductory IT lectures"> 
               <AspectRatio ratio={16/9}>
                 <Image src="/tgi-pages.png"  alt="TGI Pages Logo"/>
               </AspectRatio>
             </Card>
-          </LinkOverlay >
+          </Link >
           <Spacer />
         </Stack>
       </Section>
