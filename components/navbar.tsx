@@ -53,7 +53,6 @@ const Navbar = props => {
         >
           <LinkItem href="/education" path={path}>Education</LinkItem>
           <LinkItem href="/work" path={path}>Work</LinkItem>
-          <LinkItem href="/projects" path={path}>Projects</LinkItem>
           <LinkItem href="/blog" path={path}>Blog</LinkItem>
         </Stack>
         <Box flex={1} align="right">
@@ -65,7 +64,6 @@ const Navbar = props => {
                 <MobileNavLink text="Home" path="/"></MobileNavLink>
                 <MobileNavLink text="Education" path="/education"></MobileNavLink>
                 <MobileNavLink text="Work" path="/work"></MobileNavLink>
-                <MobileNavLink text="Projects" path="/projects"></MobileNavLink>
                 <MobileNavLink text="Blog" path="/blog"></MobileNavLink>
                 <MenuItem as={Link} href="https://github.com/Fancy11111/fenz-io" target="_blank">SourceCode</MenuItem>
                 

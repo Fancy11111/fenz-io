@@ -6,11 +6,11 @@ import NextLink from 'next/link';
 const Footer = () => {
   return (
   <Container mt={10}>
-    <Heading as="h3" variant="section-title">
-      Contact me
-    </Heading> 
     <Section>
       <Flex direction="column" align="center" justify="center">
+        <Heading as="h3" variant="section-title">
+          Contact me
+        </Heading> 
         <ContactMe />
       </Flex>
     </Section>
