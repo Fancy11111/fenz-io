@@ -22,7 +22,7 @@ const Blog = ({amount}) => {
     setOffset(Number.parseInt(e));
     
   };
-  const pageAmount = amount % limit == 0 ? amount / limit : Math.ceil(amount / limit);
+  const pageAmount = Math.ceil(amount / limit);
   const pages = [];
   for(let i = 1; i < pageAmount+1; i++) {
     pages.push(i);
