@@ -23,7 +23,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-, "pages/index.js", "components/animated.jsx"  ],
+, "pages/index.js", "components/animated.tsx"  ],
   "exclude": [
     "node_modules"
   ]

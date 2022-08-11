@@ -1,5 +1,8 @@
+/** @type {import('next').NextConfig} */
 module.exports = {
   reactStrictMode: true,
   swcMinify: true,
-  serverless: true
+  images: {
+    domains: ['images.ctfassets.net']
+  }
 }

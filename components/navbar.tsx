@@ -1,79 +1,107 @@
-import Logo from "./logo";
-import NextLink from 'next/link';
-import { Container, Box, Link, Stack, Heading, Flex, Menu, MenuItem, MenuList, MenuButton, IconButton, useColorModeValue } from '@chakra-ui/react';
-import { HamburgerIcon } from '@chakra-ui/icons';
-import ThemeToggleButton from "./theme-toggle-button";
+import Logo from './logo'
+import NextLink from 'next/link'
+import ThemeToggleButton from './theme-toggle-button'
 
-const LinkItem = ({href, path, children}) => {
-  const active = path === href;
-  const inactiveColor = useColorModeValue('gray200', 'whiteAlpha900');
-  const activeColor = useColorModeValue('primaryDark', 'primaryLight');
+const LinkItem = ({ href, path, children }) => {
+  const active = path === href
   return (
     <NextLink href={href}>
-      <Link p={2} bg={active ? 'lightTeal' : undefined} color={active ? activeColor : inactiveColor}>
+      <a
+        className={`px-2 text-xl hover:underline underline-offset-2 ${
+          active
+            ? 'text-slate-700 dark:text-slate-100 font-bold'
+            : 'text-gray-500 dark:text-gray-200 font-semibold'
+        }`}
+      >
         {children}
-      </Link>
+      </a>
     </NextLink>
   )
 }
 
 type MobileNavLink = {
-  path: string,
-  text: string,
+  path: string
+  text: string
   children?: any
 }
 
-const MobileNavLink = ({path,text, children}: MobileNavLink) => {
+const MobileNavLink = ({ path, text, children }: MobileNavLink) => {
   return (
     <NextLink href={path} passHref>
-      <MenuItem as={Link}>
+      <a>
         {text}
         {children}
-      </MenuItem>
+      </a>
     </NextLink>
   )
 }
 
 const Navbar = props => {
-  const { path } = props;
+  const { path } = props
   return (
-    <Box position="fixed" as="nav" w="100%" bg={useColorModeValue('#f0f0f080', '#35353580')} style={{backdropFilter:'blur(10px)'}} zIndex={10} {...props}>  
-      <Container display="flex" p={2} maxW="container.md" wrap="wrap" align="center" justify="space-between">
-        <Flex align="center" mr={5} >
-          <Heading as="h1" size="lg" letterSpacing={'tight'}>
-            <Logo/>
-          </Heading>
-        </Flex>
-        <Stack 
-          display={{base:'none', md:'flex'}} 
-          direction={{base:'column', md:'row'}} 
-          width={{base:'full', md:'auto'}} 
-          alignItems="center" 
-          flexGrow={1} mt={{base:4, nmd:0}}
-        >
-          <LinkItem href="/education" path={path}>Education</LinkItem>
-          <LinkItem href="/work" path={path}>Work</LinkItem>
-          <LinkItem href="/blog" path={path}>Blog</LinkItem>
-        </Stack>
-        <Box flex={1} align="right">
+    <nav
+      className="fixed w-full bg-opacity-70 dark:bg-opacity-70 bg-gray-100 dark:bg-gray-700  backdrop-blur-md z-10 py-4"
+      {...props}
+    >
+      <div className="flex container px-4 md:w-10/12 md:mx-auto wrap justify-around items-center h-full">
+        <div className="flex flex-row w-2/12 items-center mr-3">
+          <h1 className="text-lg tracking-tight">
+            <Logo />
+          </h1>
+        </div>
+        <div className="flex flex-row justify-between items-center h-full md:pr-40 ">
+          <LinkItem href="/education" path={path}>
+            Education
+          </LinkItem>
+          <LinkItem href="/work" path={path}>
+            Work
+          </LinkItem>
+          <LinkItem href="/blog" path={path}>
+            Blog
+          </LinkItem>
+        </div>
+        <div className="self-right w-auto">
           <ThemeToggleButton />
-          <Box ml={2} display={{base: 'inline-block', md:'none'}}>
-            <Menu>
-              <MenuButton as={IconButton} icon={<HamburgerIcon />} variant="outline" aria-label="menu"/>
-              <MenuList>
-                <MobileNavLink text="Home" path="/"></MobileNavLink>
-                <MobileNavLink text="Education" path="/education"></MobileNavLink>
-                <MobileNavLink text="Work" path="/work"></MobileNavLink>
-                <MobileNavLink text="Blog" path="/blog"></MobileNavLink>
-                <MenuItem as={Link} href="https://github.com/Fancy11111/fenz-io" target="_blank">SourceCode</MenuItem>
-                
-              </MenuList>
-            </Menu>
-          </Box>
-        </Box>
-      </Container>
-    </Box>
-  );
+          <div className="ml-2 inline-block md:hidden">
+            <nav>
+              <button
+              // as={IconButton}
+              // icon={<HamburgerIcon />}
+              // variant="outline"
+              // aria-label="menu"
+              />
+              <ul>
+                <li>
+                  <MobileNavLink text="Home" path="/"></MobileNavLink>
+                </li>
+                <li>
+                  <MobileNavLink
+                    text="Education"
+                    path="/education"
+                  ></MobileNavLink>
+                </li>
+                <li>
+                  <MobileNavLink text="Work" path="/work"></MobileNavLink>
+                </li>
+                <li>
+                  <MobileNavLink text="Blog" path="/blog"></MobileNavLink>
+                </li>
+                <li>
+                  <a
+                    href="https://github.com/Fancy11111/fenz-io"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Sourcecode
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </nav>
+  )
 }
 
-export default Navbar;
+export default Navbar

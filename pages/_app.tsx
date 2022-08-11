@@ -1,21 +1,20 @@
-import { ChakraProvider } from '@chakra-ui/react';
-import {  ApolloProvider } from "@apollo/client";
-import Fonts from '../components/fonts';
-import Layout from '../components/layouts/main';
-import theme from '../libs/theme/theme';
-import { client } from '../libs/blog/contentful';
+import '../styles/globals.css'
+import { ApolloProvider } from '@apollo/client'
+import Layout from '../components/layouts/main'
+import { client } from '../libs/blog/contentful'
+import { ThemeProvider } from '../libs/theme/theme'
 
-const App = ({Component, pageProps, router}) => {
+const App = ({ Component, pageProps, router }) => {
+  const initTheme = 'dark'
   return (
     <ApolloProvider client={client}>
-      <ChakraProvider theme={theme}>
-        <Fonts />
+      <ThemeProvider initValue={initTheme}>
         <Layout router={router}>
           <Component {...pageProps} key={router.route} />
         </Layout>
-      </ChakraProvider>
+      </ThemeProvider>
     </ApolloProvider>
   )
 }
 
-export default App;
+export default App

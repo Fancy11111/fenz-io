@@ -1,29 +1,34 @@
-import { Container, Text, Link } from "@chakra-ui/layout"
-
 const Impressum = () => {
   return (
-
-    <Container maxW={{base: 'container.sm', xl: 'container.md'}}>
+    <div className="container-sm xl:container-md">
       <br />
-      <Text>Daniel Fenz</Text>
+      <p>Daniel Fenz</p>
       {
-        //<Text>Getreidegasse 14, 2824 Schiltern, Austria</Text>
+        //<p>Getreidegasse 14, 2824 Schiltern, Austria</p>
       }
-      <Text>Software Dienstleistungen</Text>
-      <Text><Link href="mailto:daniel@fenz.io">daniel@fenz.io</Link></Text>
-      <Text>UID-Nr: </Text>
-      <Text>Mitglied der WKÖ, WKNÖ</Text>
-      <Text>Berufsrecht: Freies Gewerbe (Dienstleistungen in der automatischen Datenverarbeitung und Informationstechnik)</Text>
-      <Text>Bezirkshauptmannschaft Neunkirchen</Text>
-      <Text>
-        Verbraucher haben die Möglichkeit,
-        Beschwerden an die Online Streitbeilegungsplattform der EU zu richten:
-        <Link href="http://ec.europa.eu/odr" target="_blank"> http://ec.europa.eu/odr</Link>.
-        Sie können allfällige Beschwerde auch an die
-        oben angegebene E-Mail-Adresse richten.
-      </Text>
-    </Container>
+      <p>Software Dienstleistungen</p>
+      <p>
+        <a href="mailto:daniel@fenz.io">daniel@fenz.io</a>
+      </p>
+      <p>UID-Nr: </p>
+      <p>Mitglied der WKÖ, WKNÖ</p>
+      <p>
+        Berufsrecht: Freies Gewerbe (Dienstleistungen in der automatischen
+        Datenverarbeitung und Informationstechnik)
+      </p>
+      <p>Bezirkshauptmannschaft Neunkirchen</p>
+      <p>
+        Verbraucher haben die Möglichkeit, Beschwerden an die Online
+        Streitbeilegungsplattform der EU zu richten:
+        <a href="http://ec.europa.eu/odr" target="_blank" rel="noreferrer">
+          {' '}
+          http://ec.europa.eu/odr
+        </a>
+        . Sie können allfällige Beschwerde auch an die oben angegebene
+        E-Mail-Adresse richten.
+      </p>
+    </div>
   )
 }
 
-export default Impressum;
+export default Impressum

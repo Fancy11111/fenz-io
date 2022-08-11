@@ -1,7 +1,7 @@
-import Link from 'next/link';
-import Image from 'next/image';
-import { Text, useColorModeValue } from '@chakra-ui/react';
-import styled from '@emotion/styled';
+import Link from 'next/link'
+import Image from 'next/image'
+import styled from 'styled-components'
+import { useThemeMode } from '../libs/theme/theme'
 
 const LogoBox = styled.span`
   font-weight: bold;
@@ -11,31 +11,30 @@ const LogoBox = styled.span`
   height: 30px;
   line-height: 20px;
   padding: 10px;
-  
+
   & img {
-    transition: transform 0.5s ease-in-out
+    transition: transform 0.5s ease-in-out;
   }
 
   &:hover img {
     transform: rotate(360deg);
   }
-`;
+`
 
 const Logo = () => {
-  const img = `/logo${useColorModeValue('','-dark')}.png`
+  const img = `/logo${useThemeMode('', '-dark')}.png`
   return (
     <Link href="/">
       <a>
-        <LogoBox>
-          <Image src={img} width={20} height={20} alt="logo"/>
-          <Text color={useColorModeValue('gray.800', 'whiteAlpha.900')} fontFamily='Roboto' fontWeight='bold' ml={3}>
+        <div className="inline-flex text-2xl h-8 w-44 flex-row flex-auto">
+          <Image src={img} width={20} height={20} alt="logo" />
+          <p className="text-gray-800 dark:text-gray-300 font-bold ml-3">
             Daniel Fenz
-          </Text>
-        </LogoBox>
-
+          </p>
+        </div>
       </a>
     </Link>
-  );
+  )
 }
 
-export default Logo;
+export default Logo
