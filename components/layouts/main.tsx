@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Navbar from '../navbar'
 import Footer from '../footer'
-import Spacer from '../spacer'
+import { Spacer } from '../spacer'
 
 const Main = ({ children, router }) => {
   const img = `/logo-dark.png`

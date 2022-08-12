@@ -7,7 +7,11 @@ const Description = ({ short, long }) => {
       {({ open }) => (
         <>
           <Disclosure.Button className="py-2">
-            <span className="flex flex-row items-center">
+            <span
+              className={`flex flex-row items-center ${
+                open ? 'underline underline-offset-2' : ''
+              }`}
+            >
               <ArrowRightFill
                 className={`${open ? 'transform rotate-90' : ''}`}
               />

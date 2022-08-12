@@ -1,14 +1,9 @@
 import Card from '../components/card'
 import Section from '../components/section'
 import BlogPreview from '../components/blog/blog-preview'
-import Animated from '../components/animated'
 import NextLink from 'next/link'
 import Image from 'next/image'
-import { useThemeMode } from '../libs/theme/theme'
-import Spacer from '../components/spacer'
-
-import { Disclosure, Transition } from '@headlessui/react'
-import { ArrowRightFill } from '../components/icons'
+import { Spacer } from '../components/spacer'
 import Description from '../components/description'
 
 const Page = () => {
@@ -39,7 +34,7 @@ const Page = () => {
       <Section>
         <h3 className="text-4xl font-bold">Education</h3>
         <div className="ml-2">
-          <ul className="list-disc list-inside">
+          <ul className="list-inside">
             <li>
               <Description
                 short="HTBLuVA Wr. Neustadt (2015-2019)"
@@ -90,7 +85,7 @@ const Page = () => {
       <Section>
         <h3 className="text-4xl font-bold">Work</h3>
         <div className="ml-2">
-          <ul className="list-disc list-inside">
+          <ul className=" list-inside">
             <li>
               <Description
                 short="moonsoft HR Solutions (2019-09 - 2019-12, 2020-07 - 2021-12)"
@@ -148,15 +143,9 @@ const Page = () => {
             <Card
               title="Robin Mood"
               text="An employee satisfaction survey tool"
-            >
-              <Image
-                src="/rmlogo.svg"
-                alt="Robin Mood logo"
-                className="aspect-"
-                width={100}
-                height={100}
-              />
-            </Card>
+              image="/rmlogo.svg"
+              imageAlt="Robin Mood logo"
+            ></Card>
           </a>
           <Spacer />
           <a href="https://robinmood.eu/" target="_blank" rel="noreferrer">

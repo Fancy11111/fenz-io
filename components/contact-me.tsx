@@ -6,6 +6,7 @@ import {
   FaTwitch,
   FaTwitter
 } from 'react-icons/fa'
+import { HSpacer } from './spacer'
 
 type ContactBoxProps = {
   href: string
@@ -33,27 +34,24 @@ const ContactMe = () => {
   //         borderColor={useColorModeValue('secondary', 'secondaryLight')}
   //       />
   //     }
-  const hspace = (
-    <div className="w-0 mx-4 border border-black dark:border-white"></div>
-  )
   return (
     <div className="flex flex-row align-center justify-center">
       <ContactBox href="mailTo:daniel@fenz.io" icon={<FaEnvelope />} />
-      {hspace}
+      <HSpacer />
       <ContactBox
         href="https://www.instagram.com/dafenz/"
         icon={<FaInstagram />}
       />
-      {hspace}
+      <HSpacer />
       <ContactBox href="https://twitter.com/FancyFenzi" icon={<FaTwitter />} />
-      {hspace}
+      <HSpacer />
       <ContactBox href="https://www.twitch.tv/dann_y" icon={<FaTwitch />} />
-      {hspace}
+      <HSpacer />
       <ContactBox
         href="https://www.linkedin.com/in/daniel-fenz-2b462b15a/"
         icon={<FaLinkedin />}
       />
-      {hspace}
+      <HSpacer />
       <ContactBox
         href="https://open.spotify.com/user/dann_yy?si=osRSn3HUSVKrXW0SQpDjfA&nd=1"
         icon={<FaSpotify />}

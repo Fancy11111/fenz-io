@@ -7,7 +7,7 @@ import {
 import { MetaData } from '../../libs/blog/contentful'
 import NextLink from 'next/link'
 import NextImage from 'next/image'
-import Spacer from '../spacer'
+import { Spacer } from '../spacer'
 
 const BlogPreviewItem = ({
   name,
